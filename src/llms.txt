@@ -16,6 +16,13 @@ OSK Tailor is a family-run driving school in Gdańsk, Poland, teaching category 
 ## Pages
 
 - [Home](https://gkunc.github.io/osktailor/): Nauka jazdy Gdańsk kat. B, TOP 10 zdawalności PORD
+- [Cennik](https://gkunc.github.io/osktailor/cennik/): course prices (page structure only, content coming)
+- [Zapisy](https://gkunc.github.io/osktailor/zapisy/): course sign-up (page structure only, content coming)
+- [FAQ](https://gkunc.github.io/osktailor/faq/): frequently asked questions (page structure only, content coming)
+- [Kontakt](https://gkunc.github.io/osktailor/kontakt/): contact details and directions (page structure only, content coming)
+- [Przepisy ruchu drogowego](https://gkunc.github.io/osktailor/blog-baza-wiedzy-o-przepisach-ruchu-drogowego-osk-tailor-gdansk/): blog category: traffic rules knowledge base
+- [Strefa Egzaminacyjna](https://gkunc.github.io/osktailor/blog-egzamin-w-pord-gdansk-z-osk-tailor-gdansk/): blog category: theory and practical exam at PORD Gdańsk
+- [Informacje ogólne](https://gkunc.github.io/osktailor/aktualnosci-szkola-jazdy-gdansk-osk-tailor/): blog category: school news and information
 - [Privacy policy](https://gkunc.github.io/osktailor/privacy.html): how personal data is handled
 
 ## Blog

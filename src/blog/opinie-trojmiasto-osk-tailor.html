@@ -32,6 +32,7 @@
   <link rel="preload" href="../fonts/roboto-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/roboto-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
   <!-- analytics -->
   <script type="application/ld+json">
   {
@@ -67,11 +68,26 @@
   <a class="skip-link" href="#main">Przejdź do treści</a>
   <header class="site-header">
     <a class="brand" href="../"><img src="../img/logo.webp" alt="" width="84" height="84"><span class="visually-hidden">OSK Tailor</span></a>
-    <nav aria-label="Główne menu">
-      <a href="../">Strona główna</a>
-      <a href="../#cennik">Cennik</a>
-      <a href="./">Blog</a>
-      <a class="btn btn-small" href="../#kontakt">Zapisz się na kurs</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Otwórz menu">
+      <svg class="icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg>
+    </button>
+    <nav id="main-nav" aria-label="Główne menu">
+      <ul class="nav-list">
+        <li><a href="../">Strona główna</a></li>
+        <li><a href="../cennik/">Cennik</a></li>
+        <li><a href="../zapisy/">Zapisy</a></li>
+        <li class="has-sub"><a href="../blog/" aria-current="page">Blog</a>
+          <ul class="sub">
+            <li><a href="../blog-baza-wiedzy-o-przepisach-ruchu-drogowego-osk-tailor-gdansk/">Baza wiedzy o przepisach ruchu drogowego | OSK Tailor Gdańsk</a></li>
+            <li><a href="../blog-egzamin-w-pord-gdansk-z-osk-tailor-gdansk/">Egzamin teoretyczny i Praktyczny kat. B w Gdańsku</a></li>
+            <li><a href="../aktualnosci-szkola-jazdy-gdansk-osk-tailor/">Informacje OSK Tailor Nauka Jazdy Gdańsk</a></li>
+          </ul>
+        </li>
+        <li><a href="../faq/">FAQ</a></li>
+        <li><a href="../kontakt/">Kontakt</a></li>
+        <li><a href="https://imageprawojazdy.pl/" rel="noopener">E-Learning</a></li>
+      </ul>
     </nav>
   </header>
   <main id="main" class="section">
@@ -136,5 +152,6 @@
   <footer class="site-footer">
     <p class="footer-bottom">&copy; OSK Tailor · <a href="../">Strona główna</a> · <a href="../privacy.html">Polityka prywatności</a> · <a href="feed.xml">RSS</a></p>
   </footer>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

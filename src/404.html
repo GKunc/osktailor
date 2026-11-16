@@ -10,10 +10,32 @@
   <!-- 404.html is served at any missing path, so every URL here is absolute. -->
   <link rel="icon" href="https://gkunc.github.io/osktailor/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://gkunc.github.io/osktailor/css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="https://gkunc.github.io/osktailor/"><img src="https://gkunc.github.io/osktailor/img/logo.webp" alt="" width="84" height="84"><span class="visually-hidden">OSK Tailor</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Otwórz menu">
+      <svg class="icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg>
+    </button>
+    <nav id="main-nav" aria-label="Główne menu">
+      <ul class="nav-list">
+        <li><a href="https://gkunc.github.io/osktailor/">Strona główna</a></li>
+        <li><a href="https://gkunc.github.io/osktailor/cennik/">Cennik</a></li>
+        <li><a href="https://gkunc.github.io/osktailor/zapisy/">Zapisy</a></li>
+        <li class="has-sub"><a href="https://gkunc.github.io/osktailor/blog/">Blog</a>
+          <ul class="sub">
+            <li><a href="https://gkunc.github.io/osktailor/blog-baza-wiedzy-o-przepisach-ruchu-drogowego-osk-tailor-gdansk/">Baza wiedzy o przepisach ruchu drogowego | OSK Tailor Gdańsk</a></li>
+            <li><a href="https://gkunc.github.io/osktailor/blog-egzamin-w-pord-gdansk-z-osk-tailor-gdansk/">Egzamin teoretyczny i Praktyczny kat. B w Gdańsku</a></li>
+            <li><a href="https://gkunc.github.io/osktailor/aktualnosci-szkola-jazdy-gdansk-osk-tailor/">Informacje OSK Tailor Nauka Jazdy Gdańsk</a></li>
+          </ul>
+        </li>
+        <li><a href="https://gkunc.github.io/osktailor/faq/">FAQ</a></li>
+        <li><a href="https://gkunc.github.io/osktailor/kontakt/">Kontakt</a></li>
+        <li><a href="https://imageprawojazdy.pl/" rel="noopener">E-Learning</a></li>
+      </ul>
+    </nav>
   </header>
   <main id="main" class="section">
     <h1>Nie znaleziono strony</h1>
@@ -21,5 +43,6 @@
     <p><a class="btn" href="https://gkunc.github.io/osktailor/">Przejdź na stronę główną</a></p>
     <p><a href="https://gkunc.github.io/osktailor/blog/">Zobacz blog</a> · <a href="https://gkunc.github.io/osktailor/#kontakt">Kontakt</a></p>
   </main>
+  <script src="https://gkunc.github.io/osktailor/js/main.js" defer></script>
 </body>
 </html>
