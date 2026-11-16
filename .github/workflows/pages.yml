@@ -51,6 +51,7 @@ jobs:
           name: lighthouse
           path: .lighthouseci
           if-no-files-found: ignore
+          include-hidden-files: true
 
       - if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/configure-pages@v6
