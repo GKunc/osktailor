@@ -16,10 +16,11 @@ OSK Tailor is a family-run driving school in Gdańsk, Poland, teaching category 
 ## Pages
 
 - [Home](https://gkunc.github.io/osktailor/): Nauka jazdy Gdańsk kat. B, TOP 10 zdawalności PORD
-- [Cennik](https://gkunc.github.io/osktailor/cennik/): course prices (page structure only, content coming)
-- [Zapisy](https://gkunc.github.io/osktailor/zapisy/): course sign-up (page structure only, content coming)
-- [FAQ](https://gkunc.github.io/osktailor/faq/): frequently asked questions (page structure only, content coming)
-- [Kontakt](https://gkunc.github.io/osktailor/kontakt/): contact details and directions (page structure only, content coming)
+- [Cennik](https://gkunc.github.io/osktailor/cennik/): full price list (standard, express and individual courses on manual and automatic, extra driving hours, packages), what the price includes, external fees
+- [Zapisy](https://gkunc.github.io/osktailor/zapisy/): how to sign up for the course (phone, SMS, WhatsApp, e-mail) and what to have ready
+- [FAQ](https://gkunc.github.io/osktailor/faq/): answers on starting age (incl. licence at 17), course length, instalments, online theory, cars, automatic gearbox, internal exam, PORD exams and the PKK number
+- [Kontakt](https://gkunc.github.io/osktailor/kontakt/): phone, WhatsApp, e-mail, office address and hours, directions map, company registration details
+- [Dokumenty](https://gkunc.github.io/osktailor/dokumenty/): course rules, parental consent form, PKK instructions, child protection standards, privacy and cookie policies (PDF)
 - [Przepisy ruchu drogowego](https://gkunc.github.io/osktailor/blog-baza-wiedzy-o-przepisach-ruchu-drogowego-osk-tailor-gdansk/): blog category: traffic rules knowledge base
 - [Strefa Egzaminacyjna](https://gkunc.github.io/osktailor/blog-egzamin-w-pord-gdansk-z-osk-tailor-gdansk/): blog category: theory and practical exam at PORD Gdańsk
 - [Informacje ogólne](https://gkunc.github.io/osktailor/aktualnosci-szkola-jazdy-gdansk-osk-tailor/): blog category: school news and information

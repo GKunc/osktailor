@@ -90,8 +90,8 @@ Source: content migrated from the existing WordPress site https://osktailor.pl (
 - Competitors / reference sites: other Gdańsk OSKs from the price analysis posts
 
 ## Forms, analytics, compliance
-- FORM_ENDPOINT: (not set; the old site used a WordPress form. Contact is by phone, e-mail and WhatsApp until a form endpoint is chosen)
-- FORM_PROVIDER: (none yet)
+- FORM_ENDPOINT: (Formspree chosen 16.11.2026; waiting for the form ID. Site went live without the form; ready version in brief/formularz/)
+- FORM_PROVIDER: Formspree
 - ANALYTICS: none
 - ANALYTICS_ID:
 - AI_CRAWLERS: allow-all
