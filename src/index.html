@@ -36,6 +36,7 @@
   <link rel="preload" href="fonts/roboto-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/roboto-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
   <!-- analytics: the new-landing skill inserts the snippet chosen in the brief here -->
 
   <script type="application/ld+json">
@@ -131,7 +132,11 @@
   <a class="skip-link" href="#main">Przejdź do treści</a>
   <header class="site-header">
     <a class="brand" href="./"><img src="img/logo.webp" alt="" width="84" height="84"><span class="visually-hidden">OSK Tailor</span></a>
-    <nav aria-label="Główne menu">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Otwórz menu">
+      <svg class="icon-open" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg>
+    </button>
+    <nav id="main-nav" aria-label="Główne menu">
       <a href="#kurs">Kurs</a>
       <a href="#cennik">Cennik</a>
       <a href="#zdawalnosc">Zdawalność</a>
@@ -153,9 +158,9 @@
           <a class="btn btn-ghost" href="tel:+48725563155">Zadzwoń:&nbsp;725&nbsp;563&nbsp;155</a>
         </div>
         <ul class="hero-facts">
-          <li><strong>4,9 ★</strong> w Google, 143 opinie</li>
+          <li><strong>4,9 ★</strong> 143 opinie w Google</li>
           <li><strong>TOP 10</strong> zdawalności w PORD Gdańsk</li>
-          <li>Biuro <strong>5 min</strong> od Dworca Głównego</li>
+          <li><strong>5 min</strong> od Dworca Głównego</li>
         </ul>
       </div>
       <img class="hero-photo" src="img/hero.webp" alt="Kursantka OSK Tailor przy samochodzie nauki jazdy w Gdańsku" width="1024" height="683" fetchpriority="high">
@@ -396,7 +401,6 @@
       <div>
         <h2>Lokalizacja</h2>
         <p>ul. Wały Piastowskie 1, lok. 508D<br>80-855 Gdańsk<br>Centrum, 5 min od Dworca Głównego</p>
-        <p>Właścicielem marki OSK Tailor jest MK Drift Michał Krawiec, ul. Antoniego Antczaka 7a, lok. 7, 80-041 Gdańsk. NIP: 5783086901, REGON: 525147544.</p>
       </div>
       <div>
         <h2>Godziny pracy biura</h2>
@@ -415,6 +419,7 @@
         </ul>
       </div>
     </div>
+    <p class="footer-legal">Właścicielem marki OSK Tailor jest MK Drift Michał Krawiec, ul. Antoniego Antczaka 7a, lok. 7, 80-041 Gdańsk. NIP: 5783086901, REGON: 525147544.</p>
     <p class="footer-bottom">&copy; <span id="year">2026</span> OSK Tailor · <a href="privacy.html">Polityka prywatności</a> · <a href="blog/">Blog</a></p>
   </footer>
 
