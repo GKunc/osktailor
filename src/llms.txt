@@ -1,0 +1,26 @@
+# OSK Tailor
+
+> Kurs prawa jazdy kat. B w Gdańsku: biuro 5 min od Dworca Głównego, auta jak w PORD, teoria online 24/7 i zdawalność 43,6% (TOP 10 w PORD Gdańsk).
+
+OSK Tailor is a family-run driving school in Gdańsk, Poland, teaching category B (car) courses on manual (Kia Rio 4) and automatic (Skoda Kamiq) cars. Its office is in the Zieleniak building (ul. Wały Piastowskie 1, lok. 508D, 80-855 Gdańsk), 5 minutes from Gdańsk Główny station. Theory is taught online with 24/7 access for 120 days; the standard course costs 4200 PLN and can be paid in two 0% instalments.
+
+## Key facts
+
+- Practical exam pass rate (cat. B, PORD Gdańsk, 01.07.2025–30.06.2026): OSK Tailor 43.6% (140 exams) vs 44.0% average of Gdańsk schools and 32.35% for all candidates. Registered in PORD reports as MK Drift Michał Krawiec (no. 02002261).
+- Course includes: online theory 24/7 for 120 days, first-aid training with a paramedic, 30 h of driving, internal practical exam, flexible scheduling, option to change instructor.
+- Extra costs outside the school: medical exam ~200 PLN, photo ~50 PLN, PORD theory exam 59 PLN, PORD practical exam 239 PLN, licence issue 100 PLN.
+- Google rating 4.9 (143 reviews, November 2026). Award: Złota Firma.
+- Contact: +48 725 563 155 (phone, WhatsApp), biuro@osktailor.pl. Office hours Mon–Fri 10:00–18:00.
+- Legal entity: MK Drift Michał Krawiec, NIP 5783086901.
+
+## Pages
+
+- [Home](https://gkunc.github.io/osktailor/): Nauka jazdy Gdańsk kat. B, TOP 10 zdawalności PORD
+- [Privacy policy](https://gkunc.github.io/osktailor/privacy.html): how personal data is handled
+
+## Blog
+
+- [All articles](https://gkunc.github.io/osktailor/blog/): index of every post
+- [Włącz myślenie, nim opadną szlabany](https://gkunc.github.io/osktailor/blog/wlacz-myslenie-nim-opadna-szlabany.html): rules at railway level crossings in Poland and the announced 3-month licence suspension
+- [Ile kosztuje prawo jazdy w Gdańsku? Ceny w III kwartale 2026](https://gkunc.github.io/osktailor/blog/ile-kosztuje-prawo-jazdy-w-gdansku-w-iii-kwartale-2026-analiza-cen.html): price survey of category B courses in Gdańsk schools, September 2026
+- [Jesteśmy na Trojmiasto.pl!](https://gkunc.github.io/osktailor/blog/opinie-trojmiasto-osk-tailor.html): OSK Tailor's profile on Trojmiasto.pl and how to leave a review

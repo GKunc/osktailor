@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "/usr/bin/python3",
+      "runtimeArgs": ["-m", "http.server", "4321", "--directory", "/Users/grzegorz/Desktop/Claude/osktailor/src"],
+      "cwd": "/Users/grzegorz/Desktop/Claude/osktailor",
+      "port": 4321
+    }
+  ]
+}

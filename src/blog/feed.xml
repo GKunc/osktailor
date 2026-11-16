@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OSK Tailor blog</title>
+    <link>https://gkunc.github.io/osktailor/blog/</link>
+    <atom:link href="https://gkunc.github.io/osktailor/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Poradnik OSK Tailor Gdańsk: przepisy ruchu drogowego, egzamin w PORD, ceny prawa jazdy w Gdańsku i aktualności szkoły jazdy.</description>
+    <language>pl</language>
+    <item>
+      <title>Włącz myślenie, nim opadną szlabany</title>
+      <link>https://gkunc.github.io/osktailor/blog/wlacz-myslenie-nim-opadna-szlabany.html</link>
+      <guid>https://gkunc.github.io/osktailor/blog/wlacz-myslenie-nim-opadna-szlabany.html</guid>
+      <pubDate>Thu, 17 Sep 2026 10:11:00 GMT</pubDate>
+      <description>Sprawdź zasady zachowania na przejeździe kolejowym. Zobacz, jak zadbać o bezpieczeństwo i uniknąć utraty prawa jazdy na 3 miesiące.</description>
+    </item>
+    <item>
+      <title>Ile kosztuje prawo jazdy w Gdańsku? Ceny w III kwartale 2026</title>
+      <link>https://gkunc.github.io/osktailor/blog/ile-kosztuje-prawo-jazdy-w-gdansku-w-iii-kwartale-2026-analiza-cen.html</link>
+      <guid>https://gkunc.github.io/osktailor/blog/ile-kosztuje-prawo-jazdy-w-gdansku-w-iii-kwartale-2026-analiza-cen.html</guid>
+      <pubDate>Sun, 13 Sep 2026 11:01:19 GMT</pubDate>
+      <description>Sprawdź aktualne ceny kursów prawa jazdy kat. B w Gdańsku (wrzesień 2026). Analiza stawek, ukrytych kosztów oraz wskaźników zdawalności PORD.</description>
+    </item>
+    <item>
+      <title>Jesteśmy na Trojmiasto.pl! Odwiedź nasz profil i podziel się swoją opinią</title>
+      <link>https://gkunc.github.io/osktailor/blog/opinie-trojmiasto-osk-tailor.html</link>
+      <guid>https://gkunc.github.io/osktailor/blog/opinie-trojmiasto-osk-tailor.html</guid>
+      <pubDate>Sun, 26 Jul 2026 20:29:29 GMT</pubDate>
+      <description>OSK Tailor opinie – dlaczego warto zostawić swój komentarz? Jesteśmy już na Trojmiasto.pl! Sprawdź opinie, zdawalność i zapisz się!</description>
+    </item>
+  </channel>
+</rss>
