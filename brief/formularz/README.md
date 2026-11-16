@@ -1,11 +1,13 @@
-# Formularz zapisu (Formspree) – czeka na ID
+# Formularz zapisu: podłączenie Formspree
 
-Gotowa wersja strony Zapisy z formularzem i akapity do polityki prywatności.
-Gdy właściciel poda adres formularza Formspree (`https://formspree.io/f/...`):
+Od 16.11.2026 formularz na `src/zapisy/index.html` jest opublikowany w trybie tymczasowym:
+`action="mailto:biuro@osktailor.pl…"`, więc po wysłaniu otwiera program pocztowy kursanta
+z gotową wiadomością (obsługa w `src/js/main.js`). Gdy właściciel poda adres Formspree (`https://formspree.io/f/...`):
 
-1. Skopiuj `zapisy-z-formularzem.html` do `src/zapisy/index.html` i podmień `{{FORM_ENDPOINT}}` na ten adres.
-2. W `src/privacy.html` zamień akapit o kontakcie na akapity z `privacy-akapity-formularz.html`.
-3. Przywróć wzmianki o formularzu: `src/kontakt/index.html` (sekcja „Chcesz się zapisać?”),
-   `src/faq/index.html` (pytanie „Jak mogę zapisać się…”, też w JSON-LD), `src/cennik/index.html` (ostatnia sekcja),
-   `src/dokumenty/index.html` (polityka prywatności).
-4. Wpisz adres do `brief/landing.md` (FORM_ENDPOINT) i uruchom `node tools/verify.mjs`.
+1. W `src/zapisy/index.html` w `<form id="lead-form">` ustaw `action="<adres Formspree>" method="POST"`,
+   usuń `enctype="text/plain"`, atrybut `data-msg-mailto` i zdanie o programie pocztowym pod formularzem.
+2. W `src/privacy.html` zamień akapit o formularzu na akapity z `privacy-akapity-formularz.html` (Formspree jako podmiot przetwarzający).
+3. Wpisz adres do `brief/landing.md` (FORM_ENDPOINT), uruchom `node tools/verify.mjs`, opublikuj i wyślij próbne zgłoszenie
+   (pierwsze zgłoszenie wymaga potwierdzenia adresu w mailu od Formspree).
+
+`zapisy-z-formularzem.html` to wersja z placeholderem `{{FORM_ENDPOINT}}` (wzorzec).
