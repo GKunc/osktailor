@@ -9,6 +9,7 @@ Static landing pages (plain HTML, CSS, JS) built and maintained with Claude Code
 Claude creates the page repo from this template, switches on hosting, fills the page, generates the social image and icons, runs every check, deploys, and gives you the live URL. You only provide business facts and, when asked, sign in to GitHub (`gh auth login`), add DNS records for a custom domain, or paste Search Console codes.
 
 ## Day to day
+- new computer / "the preview doesn't work" → `dev-setup` skill (installs tools, git hooks, live-reload preview)
 - "write a blog post about …" → `blog-post` skill
 - "check SEO" / "why don't we show up in ChatGPT?" → `seo` skill
 - "is the site OK?" (monthly) → `audit` skill
@@ -19,6 +20,10 @@ Claude creates the page repo from this template, switches on hosting, fills the 
 | --- | --- |
 | `src/` | The site: home, blog, privacy, 404, robots.txt, sitemap.xml, llms.txt, RSS feed, manifest, icons |
 | `brief/landing.md` | Per-page facts; Claude never invents beyond it |
+| `tools/serve.mjs` | Local preview of `src/` with live reload (the `site` preview) |
+| `tools/verify.mjs` | Runs the CI checks locally (`--quick` offline, `--lighthouse` full) |
+| `tools/doctor.mjs` | Checks this computer is ready to develop; `--fix` sets up hooks and the preview |
+| `.githooks/` | pre-commit: release checks; pre-push: `verify.mjs --quick` |
 | `tools/check.mjs` | Release checks (placeholders, filler copy, meta, JSON-LD, FAQ schema, sitemap, blog wiring) |
 | `tools/build.mjs` | Builds `_site/` for deploy and adds sitemap `<lastmod>` from git history |
 | `tools/make-assets.mjs` | Generates `og.png` and app icons from the brand (needs local Chrome) |
@@ -26,11 +31,11 @@ Claude creates the page repo from this template, switches on hosting, fills the 
 | `.github/workflows/pages.yml` | On PRs: checks. On `main`: checks → HTML validation → link check → Lighthouse → deploy → smoke test → IndexNow |
 | `.github/dependabot.yml` | Keeps the workflow's actions up to date |
 | `lighthouserc.json` | Lighthouse budgets: performance ≥ 0.9; accessibility, best practices, SEO ≥ 0.95; CLS ≤ 0.1 |
-| `.claude/skills/` | new-landing, publish, domain-knowledge, seo, blog-post, audit, webmcp |
-| `.claude/launch.json` | Local preview server (`python3 -m http.server 4321 --directory src`) |
+| `.claude/skills/` | dev-setup, new-landing, publish, domain-knowledge, seo, blog-post, audit, webmcp |
+| `.claude/launch.json` | Local preview server (`node tools/serve.mjs 4321`, live reload) |
 | `.mcp.json` | Chrome DevTools MCP for checking pages while developing |
 
-Requirements on the machine running Claude Code: Node 22+, Chrome, Python 3, and the GitHub CLI (`brew install gh`).
+Requirements on the machine running Claude Code: Node 22+, git, Chrome and the GitHub CLI. Say "set up my environment" and the `dev-setup` skill installs and checks them.
 
 ## Maintaining this template
 - Mark this repo as a template once: `gh repo edit --template`. CI and deploy are skipped in the template repo itself (it is all `{{placeholders}}`) and run in every repo created from it.

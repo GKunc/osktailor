@@ -1,7 +1,7 @@
 # Landing page template
 
 Static landing page: plain HTML, CSS, JS. No build step for the site itself; CI copies `src/` to `_site/` (adds sitemap lastmod) and deploys it to GitHub Pages.
-One repo per landing page. Start with the `new-landing` skill; hosting is handled by the `publish` skill.
+One repo per landing page. Start with the `new-landing` skill; hosting is handled by the `publish` skill. A new computer, or tooling that misbehaves → `dev-setup` skill (`node tools/doctor.mjs`).
 
 ## Rules
 - All page source lives in `src/`. Keep it dependency-free. Repo tooling lives in `tools/` (Node, no npm deps).
@@ -13,9 +13,9 @@ One repo per landing page. Start with the `new-landing` skill; hosting is handle
 - The person using this is not technical: never ask them to open GitHub settings. Do hosting work with `gh`.
 
 ## Before calling anything done
-1. `node tools/check.mjs` passes.
+1. `node tools/verify.mjs` passes (release checks, build, HTML validation, internal links; `--lighthouse` for the full CI set).
 2. Preview (`.claude/launch.json` → `site`) checked with Chrome DevTools MCP: console clean, 375px and desktop, light and dark.
 3. After pushing: `gh run watch` succeeds (CI also runs html-validate, lychee and Lighthouse) and the live URL returns 200.
 
 ## Skills (`.claude/skills/`)
-new-landing, publish, domain-knowledge, seo, blog-post, audit, webmcp
+dev-setup, new-landing, publish, domain-knowledge, seo, blog-post, audit, webmcp

@@ -27,7 +27,7 @@ const files = walk(dir).map((p) => ({ p, r: rel(p, dir) })).filter(({ r }) => !S
 const html = files.filter(({ r }) => r.endsWith('.html'));
 
 // 1. Required files
-for (const f of REQUIRED) if (!existsSync(join(dir, f))) err(f, 'missing (run tools/make-assets.sh for images)');
+for (const f of REQUIRED) if (!existsSync(join(dir, f))) err(f, 'missing (run node tools/make-assets.mjs for images)');
 
 // 2. Placeholders, filler copy, TODO markers
 for (const { p, r } of files) {

@@ -3,8 +3,11 @@
   "configurations": [
     {
       "name": "site",
-      "runtimeExecutable": "/usr/bin/python3",
-      "runtimeArgs": ["-m", "http.server", "4321", "--directory", "/Users/grzegorz/Desktop/Claude/osktailor/src"],
+      "runtimeExecutable": "/Users/grzegorz/.nvm/versions/node/v22.20.0/bin/node",
+      "runtimeArgs": [
+        "tools/serve.mjs",
+        "4321"
+      ],
       "cwd": "/Users/grzegorz/Desktop/Claude/osktailor",
       "port": 4321
     }
