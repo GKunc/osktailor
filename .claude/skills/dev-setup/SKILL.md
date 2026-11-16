@@ -5,7 +5,7 @@ description: Prepare this computer to develop the landing page - install missing
 
 # dev-setup
 
-The person is not technical. Do the work yourself, explain in one plain sentence what each step is for, and only hand them the steps that need *them* (their password, their GitHub sign-in). Talk in their language (Polish for this repo).
+The person is not technical. Do the work yourself, explain in one plain sentence what each step is for, and only hand them the steps that need *them* (their password, their GitHub sign-in). Talk in their language (the LANG in `brief/landing.md`, or whatever they write in).
 
 What the finished environment gives them:
 | Piece | What it does |

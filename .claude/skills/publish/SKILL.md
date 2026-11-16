@@ -35,7 +35,7 @@ gh api -X POST repos/OWNER/NAME/pages -f build_type=workflow \
 - Save SITE_URL in the brief.
 
 ## 4. Deploy
-1. `node tools/check.mjs` must pass.
+1. `node tools/verify.mjs` must pass (the pre-push hook runs `--quick` too).
 2. Commit and push to `main`. The workflow runs release checks, HTML validation, link check and Lighthouse; only then does it deploy.
 3. Wait for it: `gh run watch --exit-status $(gh run list --branch main --limit 1 --json databaseId --jq '.[0].databaseId')` (run in the background; takes a few minutes).
 4. On failure: `gh run view --log-failed`, fix, push again. The Lighthouse report is attached to the run as the `lighthouse` artifact.

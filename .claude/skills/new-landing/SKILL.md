@@ -7,6 +7,7 @@ description: Turn this template into a finished, published landing page from bri
 
 The person using this does not need to know about GitHub Pages, Actions or DNS. Ask only for business facts; handle hosting yourself via the `publish` skill.
 
+0. **Machine.** Run `node tools/doctor.mjs --fix`. Any ✘ → run the `dev-setup` skill first.
 1. **Brief.** Read `brief/landing.md` (domain-knowledge skill). Required: BRAND, THEME_COLOR, LANG, LOCALE, LEGAL_ENTITY, CONTACT_EMAIL, PAGE_TITLE, H1_HEADLINE, META_DESCRIPTION, CTA_LABEL, FORM_ENDPOINT, primary keyword, REPO_NAME. Ask for missing ones in one message; never guess.
 2. **Repo and URL first.** Run `publish` steps 1-3 so the repo exists, Pages is enabled and the real SITE_URL is known (no trailing slash). Write SITE_URL and a fresh `INDEXNOW_KEY` (`openssl rand -hex 16`) into the brief.
 3. **Fill placeholders** in every file under `src/` except `blog/_template.html` (its placeholders are per post). Derived values:
