@@ -76,7 +76,8 @@ Source: content migrated from the existing WordPress site https://osktailor.pl (
 
 ## Author (for blog posts and E-E-A-T)
 - AUTHOR_NAME: Izabela Kunc
-- AUTHOR_URL: https://osktailor.pl/ (no personal profile given)
+- AUTHOR_URL: https://gkunc.github.io/osktailor/author/iza-kunc/ (author page in this repo: src/author/iza-kunc/; switch with SITE_URL)
+- AUTHOR_JOB_TITLE: Instruktorka nauki jazdy
 - AUTHOR_BIO: Instruktorka nauki jazdy w OSK Tailor Gdańsk.
 
 ## Voice

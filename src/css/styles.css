@@ -340,11 +340,11 @@ article figure img { display:block; border-radius:var(--radius); }
 .site-footer { background:var(--asphalt); color:var(--on-dark-muted); padding-top:3rem; padding-bottom:2rem; font-size:.95rem; }
 .site-footer a { color:#fff; }
 .footer-grid { display:grid; gap:2rem; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); }
-.site-footer h2 { font-family:Roboto, system-ui, sans-serif; font-weight:700; font-size:1rem; color:#fff; margin:0 0 .75rem; }
+.site-footer .footer-title { font-family:Roboto, system-ui, sans-serif; font-weight:700; font-size:1rem; color:#fff; margin:0 0 .75rem; }
 .site-footer ul { list-style:none; padding:0; margin:0; }
 .site-footer li { margin:.3rem 0; }
 .site-footer p { margin:.3rem 0; }
-.site-footer h2.mt { margin-top:1.25rem; }
+.site-footer .footer-title.mt { margin-top:1.25rem; }
 .site-footer .footer-legal { margin:2rem 0 0; font-size:.85rem; max-width:none; }
 .footer-bottom { border-top:1px solid #39414d; margin-top:1rem; padding-top:1.25rem; text-align:center; }
 
