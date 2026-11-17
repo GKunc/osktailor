@@ -3,7 +3,7 @@
 // Exits 1 on any error. Warnings are printed but do not fail.
 import { existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
-import { SRC, walk, rel, read, sitemapUrls, siteUrl, urlToFile } from './lib.mjs';
+import { SRC, walk, rel, read, sitemapUrls, siteUrl, urlToFile, fileToUrl } from './lib.mjs';
 
 const dir = resolve(process.argv[2] || SRC);
 const errors = [];
@@ -116,14 +116,15 @@ if (existsSync(join(dir, 'sitemap.xml'))) {
     err('robots.txt', 'Sitemap line does not match the site URL');
   }
 
-  const posts = html.map(({ r }) => r).filter((r) => /^blog\/[^/]+\.html$/.test(r) && r !== 'blog/index.html');
+  // Posts live at <slug>/index.html (same URLs as the old WordPress site); a post is any indexable page with BlogPosting JSON-LD.
+  const posts = indexable.filter((r) => /"@type":\s*"BlogPosting"/.test(read(join(dir, r))));
   const blogIndex = existsSync(join(dir, 'blog/index.html')) ? read(join(dir, 'blog/index.html')) : '';
   const feed = existsSync(join(dir, 'blog/feed.xml')) ? read(join(dir, 'blog/feed.xml')) : '';
   const llms = existsSync(join(dir, 'llms.txt')) ? read(join(dir, 'llms.txt')) : '';
   for (const r of posts) {
-    const slug = r.slice('blog/'.length);
-    const url = base + r;
-    if (!blogIndex.includes(`href="${slug}"`)) err(r, 'not linked from blog/index.html');
+    const url = fileToUrl(r, dir);
+    const href = '../' + r.replace(/index\.html$/, '');
+    if (!blogIndex.includes(`href="${href}"`)) err(r, `not linked from blog/index.html (expected href="${href}")`);
     if (!feed.includes(`<link>${url}</link>`)) err(r, 'missing from blog/feed.xml');
     if (!llms.includes(url)) err(r, 'missing from llms.txt');
   }
