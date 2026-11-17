@@ -2,7 +2,28 @@
   "ci": {
     "collect": {
       "staticDistDir": "./_site",
-      "numberOfRuns": 3
+      "numberOfRuns": 3,
+      "autodiscoverUrlBlocklist": [
+        "/author/admin3414/index.html",
+        "/author/iza-kunc/index.html",
+        "/category/egzamin-kat-b-w-gdansku/index.html",
+        "/category/oferta-osk-tailor-nauka-jazdy-gdansk/index.html",
+        "/category/przepisy-ruchu-drogowego-baza-wiedzy-osk-tailor-gdansk/index.html",
+        "/faq/index.html",
+        "/ile-kosztuje-kurs-prawa-jazdy-na-przelomie-roku-2025-2026-w-gdansku-transparentna-informacja-o-wszystkich-kosztach__trashed/index.html",
+        "/kontakt/index.html",
+        "/page/2/index.html",
+        "/tag/cena-prawa-jazdy-gdansk-2026/index.html",
+        "/tag/ile-kosztuje-kurs-kat-b/index.html",
+        "/tag/jazdy-dodatkowe/index.html",
+        "/tag/osk-tailor/index.html",
+        "/tag/prawo-jazdy-gdansk/index.html",
+        "/tag/prawo-jazdy-kat-b/index.html",
+        "/tag/przejazd-kolejowy/index.html",
+        "/tag/przepisy-ruchu-drogowego/index.html",
+        "/tag/punkty-karne/index.html",
+        "/tag/zdawalnosc-pord-gdansk/index.html"
+      ]
     },
     "assert": {
       "assertMatrix": [
