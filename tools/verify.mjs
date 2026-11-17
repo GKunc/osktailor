@@ -44,8 +44,9 @@ function checkLinks() {
   const pages = walk(SITE).filter((p) => p.endsWith('.html'));
   for (const page of pages) {
     const html = read(page).replace(/<!--[\s\S]*?-->/g, '');
-    for (const m of html.matchAll(/\s(?:href|src|srcset|poster)\s*=\s*["']([^"']+)["']/gi)) {
-      for (let url of m[1].split(',').map((s) => s.trim().split(/\s+/)[0])) {
+    for (const m of html.matchAll(/\s(href|src|srcset|poster)\s*=\s*["']([^"']+)["']/gi)) {
+      const urls = m[1].toLowerCase() === 'srcset' ? m[2].split(',').map((s) => s.trim().split(/\s+/)[0]) : [m[2].trim()];
+      for (let url of urls) {
         if (!url || /^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(url) || url.includes('{{')) continue;
         url = url.split(/[?#]/)[0];
         if (!url) continue;
