@@ -12,7 +12,7 @@ Run `node tools/check.mjs` first: it already enforces placeholders, filler copy,
 - One `<h1>` with the primary keyword; h2/h3 follow the questions people actually search.
 - Open Graph + Twitter tags complete; `og.png` is on-brand (regenerate with `node tools/make-assets.mjs`).
 - JSON-LD: Organization + WebSite on home; Service/Product/LocalBusiness when the brief supports it; BlogPosting + BreadcrumbList on posts; FAQPage only for a real visible FAQ. Validate tricky cases at https://validator.schema.org.
-- Images: `alt`, explicit width/height, `loading="lazy"` below the fold, hero image `fetchpriority="high"`, AVIF/WebP via `<picture>`, sized to display size.
+- Images: `alt`, explicit width/height, `loading="lazy"` below the fold, hero/featured image `fetchpriority="high"`. After adding an `<img>`, run `node tools/make-images.mjs`: it makes WebP copies at 400/800/≤1200 px and adds `srcset` + `sizes` (contexts listed at the top of the script; add one there for a new layout).
 - Internal links: home ↔ posts, posts ↔ related posts, descriptive anchor text, every post links to the CTA.
 - Core Web Vitals: LCP < 2.5 s, CLS < 0.1, INP < 200 ms. No web fonts unless the brief requires them (then self-host, `font-display: swap`, preload one file).
 

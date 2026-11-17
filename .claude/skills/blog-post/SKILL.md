@@ -10,7 +10,7 @@ description: Create or update a static blog post for this landing (outline, draf
 3. Copy `src/blog/_template.html` to `src/<slug>/index.html` (posts live at `/<slug>/`, the same URL scheme as the old WordPress site osktailor.pl) and fill every placeholder:
    - POST_TITLE, POST_DESCRIPTION (120-155 chars), SLUG, DATE and DATE_MODIFIED (YYYY-MM-DD, same on first publish).
    - AUTHOR_NAME / AUTHOR_URL from the brief. If there is no named author, change the JSON-LD `author` to `{ "@id": "SITE_URL/#organization" }`, set the byline and `<meta name="author">` to the brand.
-   - POST_IMAGE: absolute URL of a post image if you add one (1200x630), else `SITE_URL/og.png`.
+   - POST_IMAGE: absolute URL of a post image if you add one (1200x630), else `SITE_URL/og.png`. Then run `node tools/make-images.mjs` so the `<img>` gets lighter WebP sizes (og:image keeps the original).
    - CTA_HEADING / CTA_TEXT: one line linking the post topic to the offer.
    - Shared values (BRAND, LANG, LOCALE, THEME_COLOR, SITE_URL, CTA_LABEL) as on the home page.
 4. Write POST_BODY in the brand voice: first paragraph answers the question directly; then specifics, examples, steps, a short summary. h2/h3 only (the title is the h1). No invented stats; cite sources. Link to the landing CTA and 1-3 related posts. Images: `alt`, width, height, `loading="lazy"`.
