@@ -52,7 +52,10 @@ function checkLinks() {
         if (!url) continue;
         let target;
         try { target = url.startsWith('/') ? join(SITE, decodeURI(url)) : resolve(dirname(page), decodeURI(url)); } catch { bad.push(`${page}: bad URL ${url}`); continue; }
-        if (!target.startsWith(SITE)) continue; // /<repo>/ style links outside the build root
+        if (!target.startsWith(SITE)) {
+          if (url.startsWith('/')) continue; // /<repo>/ style links outside the build root
+          bad.push(`${page.slice(SITE.length + 1)} -> ${url} (climbs above the site root)`); continue;
+        }
         if (existsSync(target) && statSync(target).isDirectory()) target = join(target, 'index.html');
         if (!existsSync(target)) bad.push(`${page.slice(SITE.length + 1)} -> ${url}`);
       }
