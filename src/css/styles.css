@@ -254,6 +254,10 @@ article figure img { display:block; border-radius:var(--radius); }
 .map { margin:0 0 1.5rem; max-width:1100px; }
 .map img { display:block; width:100%; height:auto; aspect-ratio:1100/680; border-radius:var(--radius); border:1px solid var(--line); }
 .map figcaption { font-size:.8rem; color:var(--muted); margin-top:.4rem; }
+.map-embed { position:relative; display:block; }
+.map-btn { position:absolute; left:50%; bottom:1rem; transform:translateX(-50%); white-space:nowrap; box-shadow:0 2px 10px rgba(0,0,0,.35); }
+.map-embed:hover .map-btn { background:#155fc4; color:#fff; }
+.map iframe { display:block; width:100%; height:auto; aspect-ratio:1100/680; border:1px solid var(--line); border-radius:var(--radius); }
 
 /* Documents */
 .doc-list { list-style:none; padding:0; margin:0; display:grid; gap:1.5rem; max-width:52rem; }

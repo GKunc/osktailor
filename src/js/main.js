@@ -2,6 +2,22 @@
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
+  // Kontakt map: swap the static preview for the Google Maps iframe on click.
+  document.querySelectorAll('[data-map-src]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const frame = document.createElement('iframe');
+      frame.src = link.dataset.mapSrc;
+      frame.title = 'Mapa Google: OSK Tailor, ul. Wały Piastowskie 1, Gdańsk';
+      frame.width = '1100';
+      frame.height = '680';
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = 'no-referrer-when-downgrade';
+      link.closest('figure')?.querySelector('figcaption')?.remove();
+      link.replaceWith(frame);
+    });
+  });
+
   // Mobile menu: collapsed by CSS when <html> has .js; the button opens it.
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.getElementById('main-nav');
