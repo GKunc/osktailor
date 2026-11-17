@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 // Runs the same checks as CI, locally, so problems show up before a push.
-// Usage: node tools/verify.mjs [--quick] [--lighthouse]
+// Usage: node tools/verify.mjs [--quick] [--lighthouse [--all]]
 //   default      release checks -> build _site -> HTML validation -> internal links
 //   --quick      release checks -> build -> internal links (offline, a few seconds; used by the pre-push hook)
-//   --lighthouse also runs Lighthouse with the CI budgets (needs Chrome, ~1-2 min)
+//   --lighthouse also runs Lighthouse with the CI budgets on the pages changed since the live version
+//                (needs Chrome, ~30 s per page); add --all to test every page (~15 min)
 import { spawnSync } from 'node:child_process';
 import { existsSync, statSync } from 'node:fs';
 import { dirname, join, resolve, sep } from 'node:path';
@@ -15,7 +16,6 @@ const lighthouse = args.has('--lighthouse');
 const SITE = join(ROOT, '_site');
 // Keep these in step with .github/workflows/pages.yml
 const HTML_VALIDATE = 'html-validate@11.21.1';
-const LHCI = '@lhci/cli@0.16.1';
 
 const results = [];
 function step(name, fn) {
@@ -66,6 +66,6 @@ step('Release checks (tools/check.mjs)', () => run(process.execPath, ['tools/che
 step('Build _site (tools/build.mjs)', () => run(process.execPath, ['tools/build.mjs']));
 if (!quick) step('HTML validation', () => run('npx', ['--yes', HTML_VALIDATE, '_site/**/*.html']));
 step('Internal links', checkLinks);
-if (lighthouse) step('Lighthouse (CI budgets)', () => run('npx', ['--yes', LHCI, 'autorun']));
+if (lighthouse) step('Lighthouse (CI budgets)', () => run(process.execPath, ['tools/lighthouse.mjs', ...(args.has('--all') ? ['--all'] : [])]));
 if (!quick && !lighthouse) console.log('\n(Lighthouse skipped; add --lighthouse to run it like CI does.)');
 finish();

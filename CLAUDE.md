@@ -13,7 +13,7 @@ One repo per landing page. Start with the `new-landing` skill; hosting is handle
 - The person using this is not technical: never ask them to open GitHub settings. Do hosting work with `gh`.
 
 ## Before calling anything done
-1. `node tools/verify.mjs` passes (release checks, build, HTML validation, internal links; `--lighthouse` for the full CI set).
+1. `node tools/verify.mjs` passes (release checks, build, HTML validation, internal links; `--lighthouse` adds Lighthouse on the pages changed since the live version, `--lighthouse --all` on every page).
 2. Preview (`.claude/launch.json` → `site`) checked with Chrome DevTools MCP: console clean, 375px and desktop, light and dark.
 3. After pushing: `gh run watch` succeeds (CI also runs html-validate, lychee and Lighthouse) and the live URL returns 200.
 

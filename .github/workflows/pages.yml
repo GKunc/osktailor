@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read # tools/lib.mjs liveCommit(): find the last successful deploy
   pages: write
   id-token: write
 concurrency:
@@ -42,7 +43,10 @@ jobs:
           fail: true
 
       - name: Lighthouse (performance, accessibility, SEO, best practices)
-        run: npx --yes @lhci/cli@0.16.1 autorun
+        # Only the pages changed since the last successful deploy (all of them when CSS/JS/tooling changed).
+        run: node tools/lighthouse.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Keep Lighthouse report
         if: always()
@@ -93,4 +97,6 @@ jobs:
           exit 1
       - name: Notify search engines (IndexNow -> Bing, ChatGPT search, Copilot)
         continue-on-error: true
-        run: node tools/indexnow.mjs "${{ github.event.before }}"
+        run: node tools/indexnow.mjs # pages changed since the last successful deploy
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

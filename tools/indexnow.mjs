@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 // Tells Bing, Yandex and other IndexNow engines which URLs changed.
 // Bing's index feeds ChatGPT search and Copilot, so this speeds up AI visibility.
-// Usage: node tools/indexnow.mjs [baseCommit]   (no base, or all zeros = submit every sitemap URL)
+// Usage: node tools/indexnow.mjs [baseCommit]   (default: the live version before this deploy, see liveCommit();
+//        all zeros or unknown = submit every sitemap URL)
 import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
-import { ROOT, SRC, read, sitemapUrls, siteUrl, urlToFile, rel } from './lib.mjs';
+import { ROOT, SRC, read, sitemapUrls, siteUrl, urlToFile, rel, liveCommit } from './lib.mjs';
 
 const key = read(join(SRC, 'indexnow.txt')).trim();
 if (!/^[A-Za-z0-9-]{8,128}$/.test(key)) {
@@ -14,7 +15,7 @@ if (!/^[A-Za-z0-9-]{8,128}$/.test(key)) {
 
 const base = siteUrl();
 const urls = sitemapUrls();
-const before = process.argv[2];
+const before = process.argv[2] || await liveCommit();
 let changed = urls;
 if (before && !/^0+$/.test(before)) {
   try {
