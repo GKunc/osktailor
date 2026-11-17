@@ -267,8 +267,10 @@ article figure img { display:block; border-radius:var(--radius); }
 .form-card h2 { font-size:clamp(1.35rem, 1rem + 1.2vw, 1.75rem); max-width:none; }
 .field { margin:0 0 1rem; }
 .field label { display:block; font-weight:700; margin-bottom:.35rem; }
-.field input, .field select { width:100%; font:inherit; color:var(--text); background:var(--bg); border:1px solid #8b939e; border-radius:6px; padding:.7rem .8rem; min-height:2.9rem; }
-.field input:focus-visible, .field select:focus-visible { outline:3px solid var(--yellow); outline-offset:1px; border-color:var(--accent); }
+.field input, .field select, .field textarea { width:100%; font:inherit; color:var(--text); background:var(--bg); border:1px solid #8b939e; border-radius:6px; padding:.7rem .8rem; min-height:2.9rem; }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline:3px solid var(--yellow); outline-offset:1px; border-color:var(--accent); }
+.field textarea { resize:vertical; min-height:8rem; }
+.signup-text h2:first-child { margin-top:0; }
 .optional { font-weight:400; color:var(--muted); }
 .field-check { display:flex; gap:.7rem; align-items:flex-start; }
 .field-check input { width:1.25rem; height:1.25rem; min-height:0; margin:.2rem 0 0; flex:none; accent-color:var(--accent); }

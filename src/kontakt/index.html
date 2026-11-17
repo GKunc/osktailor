@@ -71,12 +71,57 @@
         </div>
         <div>
           <h2 class="h3">Chcesz się zapisać?</h2>
-          <p>Wypełnij <a href="../zapisy/">formularz zapisu</a>, a oddzwonimy w wybranych przez Ciebie godzinach.</p>
+          <p>Wypełnij <a href="../zapisy/">formularz zapisu</a>, a oddzwonimy w wybranych przez Ciebie godzinach. Masz pytanie? <a href="#napisz">Napisz do nas</a>.</p>
         </div>
       </div>
     </section>
 
-    <section class="section band" id="dojazd">
+    <section class="section band signup" id="napisz">
+      <div class="signup-text">
+        <h2>Napisz do nas</h2>
+        <p class="section-intro">Masz pytanie o kurs, jazdy dodatkowe albo dokumenty? Zostaw wiadomość, a odpowiemy mailowo lub oddzwonimy.</p>
+        <p>Chcesz od razu zapisać się na kurs? Skorzystaj z <a href="../zapisy/">formularza zapisu</a>.</p>
+      </div>
+      <div class="form-card">
+        <h2 class="h3">Formularz kontaktowy</h2>
+        <form id="contact-form" class="js-form" action="mailto:biuro@osktailor.pl?subject=Wiadomo%C5%9B%C4%87%20ze%20strony%20osktailor.pl" method="post" enctype="text/plain"
+          data-msg-sending="Wysyłamy wiadomość…"
+          data-msg-mailto="Otworzyliśmy Twój program pocztowy z gotową wiadomością do biura. Wystarczy ją wysłać. Jeśli program się nie otworzył, zadzwoń: 725 563 155 lub napisz na biuro@osktailor.pl."
+          data-msg-success="Dziękujemy! Wiadomość dotarła do biura OSK Tailor. Odpowiemy najszybciej, jak to możliwe."
+          data-msg-error="Nie udało się wysłać wiadomości. Spróbuj ponownie albo zadzwoń: 725 563 155.">
+          <input type="hidden" name="_subject" value="Wiadomość ze strony osktailor.pl">
+          <div class="field">
+            <label for="c-name">Imię i nazwisko <span aria-hidden="true">*</span></label>
+            <input id="c-name" name="imie_i_nazwisko" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="c-email">Adres e-mail <span aria-hidden="true">*</span></label>
+            <input id="c-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="c-phone">Telefon <span aria-hidden="true">*</span></label>
+            <input id="c-phone" name="telefon" type="tel" autocomplete="tel" inputmode="tel" required>
+          </div>
+          <div class="field">
+            <label for="c-message">Wiadomość</label>
+            <textarea id="c-message" name="wiadomosc" rows="5"></textarea>
+          </div>
+          <div class="field field-hp" aria-hidden="true">
+            <label for="c-gotcha">Nie wypełniaj tego pola</label>
+            <input id="c-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="field field-check">
+            <input id="c-consent" name="zgoda" type="checkbox" value="tak" required>
+            <label for="c-consent">Wyrażam zgodę na przetwarzanie moich danych osobowych przez OSK Tailor w celu odpowiedzi na wiadomość. Szczegóły w <a href="../privacy.html">polityce prywatności</a>. <span aria-hidden="true">*</span></label>
+          </div>
+          <p class="note">Pola oznaczone * są wymagane. Po kliknięciu „Wyślij wiadomość” otworzy się Twój program pocztowy z gotową wiadomością do biura OSK Tailor.</p>
+          <button class="btn" type="submit">Wyślij wiadomość</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="dojazd">
       <h2>Mapa dojazdu</h2>
       <p class="section-intro">Biuro znajdziesz w budynku Zieleniak, 5 minut pieszo od Dworca Głównego. Jazdy zaczynają się niedaleko, przy ul. Rajskiej 14, na małym parkingu obok siedziby Solidarności.</p>
       <figure class="map">
@@ -88,7 +133,7 @@
       <p class="contact-actions"><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=54.358566%2C18.646852" rel="noopener">Wyznacz trasę w Google Maps</a> <a class="btn btn-outline" href="https://share.google/oarLvjTelRbrn5q8C" rel="noopener">Nasza wizytówka Google</a></p>
     </section>
 
-    <section class="section">
+    <section class="section band">
       <div class="contact-grid no-rule">
         <div>
           <h2 class="h3">Dane rejestrowe (do faktur i przelewów)</h2>
