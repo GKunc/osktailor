@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 // Runs Lighthouse with the CI budgets (lighthouserc.json) on the pages that changed since the
 // version that is live now, so a one-page edit does not re-test the whole site.
-// Every page is tested when a shared file changed (CSS, JS, fonts, this tooling, the workflow),
-// when the live version is unknown, or with --all. Redirect stubs for old WordPress URLs are never
-// tested: they only forward to another page.
+// A shared file (CSS, JS, fonts, this tooling, the workflow) does not trigger the whole site: only
+// the changed pages are tested, and if no page changed, the home page stands in as a sample.
+// Every page is tested only when the live version is unknown, or with --all. Redirect stubs for old
+// WordPress URLs are never tested: they only forward to another page.
 // Usage: node tools/lighthouse.mjs [--all] [--list]   (run tools/build.mjs first; verify.mjs does)
 //   --list  only print which pages would be tested
 import { spawnSync } from 'node:child_process';
@@ -27,19 +28,18 @@ if (!process.argv.includes('--all')) {
   else {
     const files = changedFiles(base);
     const shared = files.find((f) => SHARED.some((re) => re.test(f)));
-    if (shared) why = `shared file changed (${shared})`;
-    else {
-      const picked = new Set();
-      for (const f of files.filter((f) => f.startsWith('src/'))) {
-        const r = f.slice(4);
-        if (r.endsWith('.html')) { if (pages.includes(r)) picked.add(r); continue; }
-        // An image, PDF, ...: every page that uses it (any size variant of an image counts).
-        const stem = basename(r, extname(r)).replace(/-\d+w$/, '');
-        for (const p of pages) if (read(join(SITE, p)).includes(`/${stem}`)) picked.add(p);
-      }
-      targets = pages.filter((p) => picked.has(p));
-      why = `changed since ${base.slice(0, 7)}`;
+    const picked = new Set();
+    for (const f of files.filter((f) => f.startsWith('src/') && !SHARED.some((re) => re.test(f)))) {
+      const r = f.slice(4);
+      if (r.endsWith('.html')) { if (pages.includes(r)) picked.add(r); continue; }
+      // An image, PDF, ...: every page that uses it (any size variant of an image counts).
+      const stem = basename(r, extname(r)).replace(/-\d+w$/, '');
+      for (const p of pages) if (read(join(SITE, p)).includes(`/${stem}`)) picked.add(p);
     }
+    // Shared CSS/JS/tooling changed but no page did: test the home page as a sample.
+    if (shared && !picked.size && pages.includes('index.html')) picked.add('index.html');
+    targets = pages.filter((p) => picked.has(p));
+    why = `changed since ${base.slice(0, 7)}${shared ? `; shared file changed (${shared}), not testing every page` : ''}`;
   }
 }
 

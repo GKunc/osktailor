@@ -43,7 +43,7 @@ jobs:
           fail: true
 
       - name: Lighthouse (performance, accessibility, SEO, best practices)
-        # Only the pages changed since the last successful deploy (all of them when CSS/JS/tooling changed).
+        # Only the pages changed since the last successful deploy (home page as a sample when only CSS/JS/tooling changed).
         run: node tools/lighthouse.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
