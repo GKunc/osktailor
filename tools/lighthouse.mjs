@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 // Runs Lighthouse with the CI budgets (lighthouserc.json) on the pages that changed since the
 // version that is live now, so a one-page edit does not re-test the whole site.
-// A shared file (CSS, JS, fonts, this tooling, the workflow) does not trigger the whole site: only
-// the changed pages are tested, and if no page changed, the home page stands in as a sample.
+// A shared file (CSS, JS, fonts, this tooling, the workflow) does not trigger the whole site: the
+// changed pages plus random ones are tested, SAMPLE (5) in all. More than SAMPLE changed pages (a
+// header or footer edit touches every page) -> SAMPLE of them, picked at random.
 // Every page is tested only when the live version is unknown, or with --all. Redirect stubs for old
 // WordPress URLs are never tested: they only forward to another page.
 // Usage: node tools/lighthouse.mjs [--all] [--list]   (run tools/build.mjs first; verify.mjs does)
@@ -14,6 +15,7 @@ import { ROOT, walk, read, rel, liveCommit, changedFiles } from './lib.mjs';
 
 const LHCI = '@lhci/cli@0.16.1'; // the only place the Lighthouse CI version is pinned (CI and verify.mjs call this script)
 const SITE = join(ROOT, '_site');
+const SAMPLE = 5; // pages tested when a shared file changes
 if (!existsSync(SITE)) { console.error('No _site/ yet: run node tools/build.mjs first.'); process.exit(1); }
 
 const isStub = (html) => /<meta http-equiv="refresh"/i.test(html);
@@ -36,10 +38,20 @@ if (!process.argv.includes('--all')) {
       const stem = basename(r, extname(r)).replace(/-\d+w$/, '');
       for (const p of pages) if (read(join(SITE, p)).includes(`/${stem}`)) picked.add(p);
     }
-    // Shared CSS/JS/tooling changed but no page did: test the home page as a sample.
-    if (shared && !picked.size && pages.includes('index.html')) picked.add('index.html');
+    const shuffle = (list) => { for (let i = list.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [list[i], list[j]] = [list[j], list[i]]; } return list; };
+    let sample = '';
+    if (picked.size > SAMPLE) {
+      // Many pages changed at once = a shared part of them did: test SAMPLE of them at random.
+      sample = `; ${picked.size} pages changed, ${SAMPLE} picked at random`;
+      const keep = new Set(shuffle([...picked]).slice(0, SAMPLE));
+      picked.clear(); keep.forEach((p) => picked.add(p));
+    } else if (shared) {
+      // Shared CSS/JS/tooling changed: top up the changed pages with random ones, SAMPLE in all.
+      sample = `; shared file changed (${shared}), random pages added up to ${SAMPLE}`;
+      for (const p of shuffle(pages.filter((p) => !picked.has(p)))) { if (picked.size >= SAMPLE) break; picked.add(p); }
+    }
     targets = pages.filter((p) => picked.has(p));
-    why = `changed since ${base.slice(0, 7)}${shared ? `; shared file changed (${shared}), not testing every page` : ''}`;
+    why = `changed since ${base.slice(0, 7)}${sample}`;
   }
 }
 
