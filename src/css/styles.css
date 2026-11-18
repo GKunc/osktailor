@@ -26,13 +26,18 @@
   --max: 1180px;
   --gutter: max(1.25rem, calc((100% - var(--max)) / 2));
   --head: "Russo One", "Arial Black", system-ui, sans-serif;
+  --promo: #c62828;
+  --day: var(--asphalt);
   --dashes: repeating-linear-gradient(90deg, var(--yellow) 0 32px, transparent 32px 56px);
   color-scheme: light dark;
 }
-/* Dark mode keeps every text/background pair at WCAG AA (4.5:1) or better. */
+/* Dark mode keeps every text/background pair at WCAG AA (4.5:1) or better.
+   It follows the system setting unless the visitor picks one with the header switch (<html data-theme>). */
 @media (prefers-color-scheme: dark) {
-  :root { --bg:#12161c; --band:#181d25; --text:#eef1f5; --muted:#a9b1bd; --card:#1e242d; --line:#2e3643; --bar:#5d6673; --accent:#5b9bff; --accent-text:#0e1218; --link:#85b3ff; --asphalt:#1b2028; --asphalt-2:#323946; }
+  :root:not([data-theme="light"]) { --bg:#12161c; --band:#181d25; --text:#eef1f5; --muted:#a9b1bd; --card:#1e242d; --line:#2e3643; --bar:#5d6673; --accent:#5b9bff; --accent-text:#0e1218; --link:#85b3ff; --asphalt:#1b2028; --asphalt-2:#323946; --promo:#ff8a80; --day:var(--asphalt-2); }
 }
+:root[data-theme="dark"] { --bg:#12161c; --band:#181d25; --text:#eef1f5; --muted:#a9b1bd; --card:#1e242d; --line:#2e3643; --bar:#5d6673; --accent:#5b9bff; --accent-text:#0e1218; --link:#85b3ff; --asphalt:#1b2028; --asphalt-2:#323946; --promo:#ff8a80; --day:var(--asphalt-2); color-scheme:dark; }
+:root[data-theme="light"] { color-scheme:light; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
 @media (prefers-reduced-motion: reduce) {
@@ -59,6 +64,19 @@ h3 { font-size: 1.15rem; font-weight:700; line-height:1.3; margin:0 0 .4rem; }
 .site-header nav a:not(.btn):hover { color:var(--yellow); }
 .site-header nav a.btn { color:#fff; margin-left:.5rem; padding:.55rem 1.1rem; }
 .menu-toggle { display:none; }
+.site-header .brand { margin-right:auto; }
+/* Light/dark switch: needs JS, so hidden without it. Moon in light mode, sun in dark mode. */
+.theme-toggle { display:none; }
+.js .theme-toggle { display:grid; place-items:center; order:1; width:2.75rem; height:2.75rem; margin-right:-.5rem; background:transparent; color:var(--on-dark); border:0; border-radius:6px; padding:0; cursor:pointer; }
+.theme-toggle:hover { color:var(--yellow); }
+.theme-toggle:focus-visible { outline:3px solid var(--yellow); outline-offset:2px; }
+.theme-toggle .icon-sun { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display:block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display:none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display:block; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display:none; }
+}
 .site-header nav ul { list-style:none; margin:0; padding:0; }
 .nav-list { display:flex; gap:.25rem 1.4rem; align-items:center; flex-wrap:wrap; }
 .nav-list > li { position:relative; }
@@ -247,8 +265,7 @@ article figure img { display:block; border-radius:var(--radius); }
 .price-table th[scope="rowgroup"] { background:var(--band); font-weight:700; width:28%; }
 .price-table tr.group-start > * { border-top:2px solid var(--text); }
 .price-table .num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; font-weight:700; }
-.price-table tr.promo td { color:#c62828; }
-@media (prefers-color-scheme: dark) { .price-table tr.promo td { color:#ff8a80; } }
+.price-table tr.promo td { color:var(--promo); }
 
 /* Map */
 .map { margin:0 0 1.5rem; max-width:1100px; }
@@ -310,12 +327,11 @@ article figure img { display:block; border-radius:var(--radius); }
 .route-info h3 + p { margin-top:0; }
 .route-info .note { margin:.75rem 0 2rem; }
 .week { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(7, minmax(0, 1fr)); gap:4px; }
-.week li { background:var(--asphalt); color:#fff; border-radius:6px; padding:.6rem .2rem; text-align:center; line-height:1.25; }
+.week li { background:var(--day); color:#fff; border-radius:6px; padding:.6rem .2rem; text-align:center; line-height:1.25; }
 .week abbr { display:block; text-decoration:none; font-weight:700; }
 .week span { display:block; font-size:.78rem; color:var(--on-dark-muted); font-variant-numeric:tabular-nums; }
 .week .closed { background:transparent; color:var(--muted); box-shadow:inset 0 0 0 1px var(--line); }
 .week .closed span { color:var(--muted); }
-@media (prefers-color-scheme: dark) { .week li:not(.closed) { background:var(--asphalt-2); } }
 .route-actions { display:flex; flex-wrap:wrap; gap:.75rem 1.5rem; align-items:center; margin:1.5rem 0 0; }
 
 .kontakt-write { display:grid; grid-template-columns:minmax(0, 5fr) minmax(0, 7fr); gap:2.5rem 4rem; align-items:start; }
@@ -376,6 +392,7 @@ article figure img { display:block; border-radius:var(--radius); }
   .site-header .sub { display:none !important; }
   .site-header nav a.btn { display:none; }
   /* With JS: logo + Menu button in one row, links open as a list below */
+  .js .theme-toggle { order:0; margin-right:0; }
   .js .menu-toggle { display:grid; place-items:center; width:2.75rem; height:2.75rem; margin-right:-.5rem; background:transparent; color:#fff; border:0; border-radius:6px; padding:0; cursor:pointer; }
   .menu-toggle[aria-expanded="false"] .icon-close, .menu-toggle[aria-expanded="true"] .icon-open { display:none; }
   .js .site-header nav.open { max-height:calc(100vh - 4rem); overflow-y:auto; }

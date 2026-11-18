@@ -27,6 +27,24 @@
     nav.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
   }
 
+  // Light/dark switch: follows the system until the visitor picks one; the choice is remembered.
+  // The <head> script applies a saved choice before first paint, so there is no flash.
+  const themeBtn = document.querySelector('.theme-toggle');
+  if (themeBtn) {
+    const root = document.documentElement;
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const isDark = () => (root.dataset.theme ? root.dataset.theme === 'dark' : systemDark.matches);
+    const sync = () => themeBtn.setAttribute('aria-pressed', String(isDark()));
+    themeBtn.addEventListener('click', () => {
+      const next = isDark() ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch { /* private mode: works for this page only */ }
+      sync();
+    });
+    systemDark.addEventListener('change', sync);
+    sync();
+  }
+
   // Forms (sign-up on Zapisy, contact on Kontakt): any <form class="js-form"> with a .form-status inside.
   // Until a form service is connected, action="mailto:…" opens the visitor's e-mail app
   // with the answers filled in, so no message gets lost.
