@@ -91,7 +91,18 @@
 
   // The banner exists only with JavaScript: without it, nothing is tracked, so there is nothing to ask.
   let banner;
-  function showBanner(withChoices) {
+  let returnTo = null; // the button that reopened the banner, if any
+  // Hide the banner without moving the page: focus goes back to the button that opened it
+  // (it is in view, and preventScroll keeps the page still); on the first visit there is none.
+  function closeBanner() {
+    const hadFocus = banner.contains(document.activeElement);
+    banner.hidden = true;
+    if (!hadFocus) return;
+    if (returnTo) returnTo.focus({ preventScroll: true });
+    else document.activeElement.blur();
+  }
+  function showBanner(withChoices, opener = null) {
+    returnTo = opener;
     if (!banner) {
       banner = document.createElement('div');
       banner.className = 'consent';
@@ -123,10 +134,9 @@
           : action === 'none' ? { analytics: false, marketing: false }
             : { analytics: choices.elements.analytics.checked, marketing: choices.elements.marketing.checked };
         saveConsent(pick);
-        banner.hidden = true;
-        if (banner.contains(document.activeElement) || document.activeElement === document.body) footerButton?.focus();
+        closeBanner();
       });
-      banner.addEventListener('keydown', (e) => { if (e.key === 'Escape' && consent) banner.hidden = true; });
+      banner.addEventListener('keydown', (e) => { if (e.key === 'Escape' && consent) closeBanner(); });
     }
     const openChoices = () => {
       const choices = banner.querySelector('.consent-choices');
@@ -149,13 +159,13 @@
     footerButton.type = 'button';
     footerButton.className = 'link-button';
     footerButton.textContent = 'Ustawienia cookies';
-    footerButton.addEventListener('click', () => showBanner(true));
+    footerButton.addEventListener('click', () => showBanner(true, footerButton));
     if (footerBottom.classList.contains('footer-bottom')) footerBottom.append(' · ');
     footerBottom.append(footerButton);
   }
   document.querySelectorAll('[data-cookie-settings]').forEach((b) => {
     b.hidden = false;
-    b.addEventListener('click', () => showBanner(true));
+    b.addEventListener('click', () => showBanner(true, b));
   });
 
   if (consent) { startGoogleTag(); countContactPage(); } else { showBanner(false); }
