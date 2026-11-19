@@ -169,7 +169,6 @@
     event('contact_click', { method: phone ? 'phone' : 'email' });
   });
 
-
   // Kontakt map: swap the static preview for the Google Maps iframe on click.
   document.querySelectorAll('[data-map-src]').forEach((link) => {
     link.addEventListener('click', (e) => {
@@ -214,14 +213,35 @@
   }
 
   // Forms (sign-up on Zapisy, contact on Kontakt): any <form class="js-form"> with a .form-status inside.
-  // Until a form service is connected, action="mailto:…" opens the visitor's e-mail app
-  // with the answers filled in, so no message gets lost.
+  // They post to the form worker (worker/form.js), which emails the office through Resend.
+  // A form whose action is "mailto:…" instead opens the visitor's e-mail app with the answers filled in.
   document.querySelectorAll('form.js-form').forEach((form) => {
     const status = form.querySelector('.form-status');
     if (!status) return;
     // Messages live in data-msg-* attributes on the form so they can be translated in HTML.
     const msg = (key) => form.dataset['msg' + key[0].toUpperCase() + key.slice(1)] || '';
     const mailto = form.getAttribute('action').startsWith('mailto:');
+
+    // Cloudflare Turnstile (anti-bot check needed for the confirmation email), loaded only when someone
+    // starts filling in the form, so pages stay fast. Usually invisible.
+    const turnstileBox = form.querySelector('[data-turnstile]');
+    let turnstileId;
+    if (turnstileBox) {
+      const start = () => {
+        if (turnstileId !== undefined || window.__turnstileLoading) return;
+        const render = () => { turnstileId = window.turnstile.render(turnstileBox, { sitekey: turnstileBox.dataset.turnstile, appearance: 'interaction-only', language: 'pl' }); };
+        if (window.turnstile) { render(); return; }
+        window.__turnstileLoading = true;
+        const queue = (window.__turnstileQueue = window.__turnstileQueue || []);
+        queue.push(render);
+        window.onTurnstileLoad = () => { while (queue.length) queue.shift()(); };
+        const s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad';
+        s.async = true;
+        document.head.appendChild(s);
+      };
+      form.addEventListener('focusin', start, { once: true });
+    }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -240,11 +260,15 @@
         return;
       }
       status.textContent = msg('sending');
+      const button = form.querySelector('button[type="submit"]');
+      if (button) button.disabled = true;
       try {
+        const body = new FormData(form);
+        body.append('page', window.location.href.split('#')[0]);
         const res = await fetch(form.action, {
           method: 'POST',
           headers: { Accept: 'application/json' },
-          body: new FormData(form),
+          body,
         });
         if (!res.ok) throw new Error(res.status);
         const formName = form.elements.form?.value;
@@ -254,6 +278,9 @@
         status.textContent = msg('success');
       } catch {
         status.textContent = msg('error');
+      } finally {
+        if (button) button.disabled = false;
+        if (turnstileId !== undefined && window.turnstile) window.turnstile.reset(turnstileId); // a token works once
       }
     });
   });

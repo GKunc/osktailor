@@ -192,12 +192,11 @@
         <p>Chcesz od razu zapisać się na kurs? Użyj <a href="../zapisy/">formularza zapisu</a>, w którym wybierzesz rodzaj kursu i godzinę kontaktu.</p>
       </div>
       <div class="write-form">
-        <form id="contact-form" class="js-form" action="mailto:biuro@osktailor.pl?subject=Wiadomo%C5%9B%C4%87%20ze%20strony%20osktailor.pl" method="post" enctype="text/plain"
+        <form id="contact-form" class="js-form" action="https://osktailor-pl-form.rozbieganekobiety.workers.dev" method="post"
           data-msg-sending="Wysyłamy wiadomość…"
-          data-msg-mailto="Otworzyliśmy Twój program pocztowy z gotową wiadomością do biura. Wystarczy ją wysłać. Jeśli program się nie otworzył, zadzwoń: 725 563 155 lub napisz na biuro@osktailor.pl."
           data-msg-success="Dziękujemy! Wiadomość dotarła do biura OSK Tailor. Odpowiemy najszybciej, jak to możliwe."
           data-msg-error="Nie udało się wysłać wiadomości. Spróbuj ponownie albo zadzwoń: 725 563 155.">
-          <input type="hidden" name="_subject" value="Wiadomość ze strony osktailor.pl">
+          <input type="hidden" name="form" value="kontakt">
           <div class="field">
             <label for="c-name">Imię i nazwisko <span aria-hidden="true">*</span></label>
             <input id="c-name" name="imie_i_nazwisko" type="text" autocomplete="name" required>
@@ -222,7 +221,9 @@
             <input id="c-consent" name="zgoda" type="checkbox" value="tak" required>
             <label for="c-consent">Wyrażam zgodę na przetwarzanie moich danych osobowych przez OSK Tailor w celu odpowiedzi na wiadomość. Szczegóły w <a href="../privacy.html">polityce prywatności</a>. <span aria-hidden="true">*</span></label>
           </div>
-          <p class="note">Pola oznaczone * są wymagane. Po kliknięciu „Wyślij wiadomość” otworzy się Twój program pocztowy z gotową wiadomością do biura OSK Tailor.</p>
+          <p class="note">Pola oznaczone * są wymagane.</p>
+          <!-- Anti-bot check (Cloudflare Turnstile): loaded on first use of the form, usually invisible. -->
+          <div class="turnstile" data-turnstile="0x4AAAAAAGJB79_did11xQwB"></div>
           <button class="btn" type="submit">Wyślij wiadomość</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>

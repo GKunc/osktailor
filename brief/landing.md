@@ -91,8 +91,8 @@ Source: content migrated from the existing WordPress site https://osktailor.pl (
 - Competitors / reference sites: other Gdańsk OSKs from the price analysis posts
 
 ## Forms, analytics, compliance
-- FORM_ENDPOINT: (Formspree chosen 16.11.2026, ID not given yet. Form is live with a temporary mailto fallback; see brief/formularz/README.md)
-- FORM_PROVIDER: Formspree
+- FORM_ENDPOINT: https://osktailor-pl-form.rozbieganekobiety.workers.dev (Cloudflare Worker in worker/, deploy: node tools/form-worker.mjs deploy)
+- FORM_PROVIDER: Resend (sender formularz@osktailor.pl; domain osktailor.pl must be verified in Resend) + Cloudflare Turnstile (site key 0x4AAAAAAGJB79_did11xQwB)
 - ANALYTICS: Google Analytics 4 (G-DRBTVPR0PM) through the Google tag GT-PZSPFKNH, loaded only after consent (cookie banner in src/js/main.js, Google consent mode v2 basic)
 - ANALYTICS_ID: GT-PZSPFKNH
 - ADS: Google Ads AW-17056167033; conversions copied from the old site's GTM-TSMJTHXB (phone click, e-mail click, Zapisy form, Kontakt form, Kontakt page visit), only with marketing consent. GTM itself is not used on the new site.
