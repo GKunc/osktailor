@@ -70,16 +70,57 @@ function notification(form, values, page, date) {
   return { subject, html, text };
 }
 
-function autoreply(kind, firstName) {
+// The site's look in email-safe HTML: asphalt (#1f242c), road-marking yellow dashes (#ffd300),
+// the blue of the "L" plate (#1b73e8) for the button and the blue road sign (#0a5aa8) for the office.
+// Email apps ignore CSS gradients, so the dashed line is a row of table cells.
+const HEAD_FONT = "'Russo One','Arial Black',Arial,sans-serif";
+const BODY_FONT = 'Roboto,Arial,Helvetica,sans-serif';
+
+function dashes(bg) {
+  const cells = Array.from({ length: 10 }, () => `<td width="6%" height="4" style="height:4px;background:#ffd300;font-size:0;line-height:0;">&nbsp;</td><td width="4%" height="4" style="height:4px;font-size:0;line-height:0;">&nbsp;</td>`).join('');
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${bg};"><tr>${cells}</tr></table>`;
+}
+
+function roadLayout(title, inner) {
+  const home = esc(SITE.siteUrl);
+  return `<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="supported-color-schemes" content="light dark"><title>${esc(title)}</title></head>
+<body style="margin:0;padding:0;background:#f2f5f9;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f2f5f9;"><tr><td align="center" style="padding:24px 12px 32px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;border-radius:12px;overflow:hidden;background:#ffffff;">
+<tr><td style="background:#1f242c;padding:26px 28px 22px;">
+  <a href="${home}" style="text-decoration:none;color:#ffffff;font:400 26px/1.1 ${HEAD_FONT};letter-spacing:.5px;">OSK <span style="color:#ffd300;">Tailor</span></a>
+  <div style="margin-top:6px;font:14px/1.4 ${BODY_FONT};color:#c3c9d2;">Nauka jazdy Gdańsk · kat. B · auta jak w PORD</div>
+</td></tr>
+<tr><td style="background:#1f242c;padding:0 0 18px;">${dashes('#1f242c')}</td></tr>
+<tr><td style="padding:30px 28px 8px;font:16px/1.6 ${BODY_FONT};color:#1a1f26;">${inner}</td></tr>
+<tr><td style="background:#1f242c;padding:18px 0 0;">${dashes('#1f242c')}</td></tr>
+<tr><td align="center" style="background:#1f242c;padding:16px 28px 22px;font:13px/1.6 ${BODY_FONT};color:#c3c9d2;">
+  OSK Tailor · ul. Wały Piastowskie 1, lok. 508D, 80-855 Gdańsk<br>
+  <a href="tel:+48725563155" style="color:#ffffff;text-decoration:none;">${esc(SITE.phone)}</a> · <a href="mailto:${esc(SITE.replyTo)}" style="color:#ffffff;text-decoration:none;">${esc(SITE.replyTo)}</a> · <a href="${home}privacy.html" style="color:#c3c9d2;">Polityka prywatności</a>
+</td></tr>
+</table></td></tr></table></body></html>`;
+}
+
+export function autoreply(kind, firstName) {
   const hello = firstName ? `Dzień dobry, ${firstName}!` : 'Dzień dobry!';
-  const what = kind === 'zapisy' ? 'Twoje zgłoszenie na kurs dotarło do biura OSK Tailor. Oddzwonimy w podanych przez Ciebie godzinach.' : 'Twoja wiadomość dotarła do biura OSK Tailor. Odpowiemy najszybciej, jak to możliwe.';
+  const headline = kind === 'zapisy' ? 'Twoje zgłoszenie na kurs dotarło' : 'Twoja wiadomość dotarła';
+  const what = kind === 'zapisy' ? 'Dziękujemy za zgłoszenie na kurs prawa jazdy kat. B. Oddzwonimy w podanych przez Ciebie godzinach.' : 'Dziękujemy za wiadomość. Odpowiemy najszybciej, jak to możliwe.';
   const subject = kind === 'zapisy' ? 'Dziękujemy za zgłoszenie na kurs – OSK Tailor' : 'Dziękujemy za wiadomość – OSK Tailor';
-  const html = layout(subject, `<p style="margin:0 0 16px;">${esc(hello)}</p>
+  const html = roadLayout(subject, `<p style="margin:0 0 6px;color:#545b65;">${esc(hello)}</p>
+<h1 style="margin:0 0 16px;font:400 26px/1.2 ${HEAD_FONT};color:#1a1f26;">${esc(headline)}</h1>
 <p style="margin:0 0 16px;">${esc(what)}</p>
-<p style="margin:0 0 16px;">Jeśli sprawa jest pilna, zadzwoń: <a href="tel:+48725563155" style="color:${SITE.color};">${esc(SITE.phone)}</a> (pon.–pt. 10:00–18:00) albo po prostu odpowiedz na tego maila.</p>
-<p style="margin:0 0 20px;">Pozdrawiamy,<br>zespół OSK Tailor</p>
-<p style="margin:0;"><a href="${esc(SITE.siteUrl)}" style="display:inline-block;background:${SITE.color};color:#ffffff;padding:12px 20px;border-radius:8px;font-weight:700;text-decoration:none;">Odwiedź naszą stronę</a></p>`);
-  const text = `${hello}\n\n${what}\n\nJeśli sprawa jest pilna, zadzwoń: ${SITE.phone} (pon.–pt. 10:00–18:00) albo odpowiedz na tego maila.\n\nPozdrawiamy,\nzespół OSK Tailor\n${SITE.siteUrl}`;
+<p style="margin:0 0 24px;">Jeśli sprawa jest pilna, zadzwoń albo po prostu odpowiedz na tego maila.</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 26px;"><tr><td style="background:#0a5aa8;border-radius:12px;padding:6px;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td style="border:3px solid #ffffff;border-radius:8px;padding:18px 20px;color:#ffffff;font:15px/1.5 ${BODY_FONT};">
+    <div style="font-weight:700;color:#d6e6f7;margin:0 0 6px;">Biuro OSK Tailor</div>
+    <div style="font:400 22px/1.15 ${HEAD_FONT};margin:0 0 6px;">Zieleniak, V piętro</div>
+    <div>ul. Wały Piastowskie 1, lok. 508D<br>80-855 Gdańsk</div>
+    <div style="margin:14px 0 0;padding:12px 0 0;border-top:3px solid #ffffff;font-weight:700;font-size:16px;"><a href="tel:+48725563155" style="color:#ffffff;text-decoration:none;">tel. ${esc(SITE.phone)}</a> · pon.–pt. 10:00–18:00</div>
+  </td></tr></table>
+</td></tr></table>
+<p style="margin:0 0 26px;"><a href="${esc(SITE.siteUrl)}" style="display:inline-block;background:#1b73e8;color:#ffffff;padding:13px 22px;border-radius:8px;font-weight:700;text-decoration:none;">Odwiedź naszą stronę</a></p>
+<p style="margin:0 0 22px;">Do zobaczenia na drodze,<br><strong>zespół OSK Tailor</strong></p>`);
+  const text = `${hello}\n\n${headline}.\n${what}\n\nJeśli sprawa jest pilna, zadzwoń: ${SITE.phone} (pon.–pt. 10:00–18:00) albo odpowiedz na tego maila.\n\nBiuro OSK Tailor: Zieleniak, V piętro, ul. Wały Piastowskie 1, lok. 508D, 80-855 Gdańsk\n\nDo zobaczenia na drodze,\nzespół OSK Tailor\n${SITE.siteUrl}`;
   return { subject, html, text };
 }
 
