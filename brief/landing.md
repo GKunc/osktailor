@@ -93,8 +93,10 @@ Source: content migrated from the existing WordPress site https://osktailor.pl (
 ## Forms, analytics, compliance
 - FORM_ENDPOINT: (Formspree chosen 16.11.2026, ID not given yet. Form is live with a temporary mailto fallback; see brief/formularz/README.md)
 - FORM_PROVIDER: Formspree
-- ANALYTICS: none
-- ANALYTICS_ID:
+- ANALYTICS: Google Analytics 4 (G-DRBTVPR0PM) through the Google tag GT-PZSPFKNH, loaded only after consent (cookie banner in src/js/main.js, Google consent mode v2 basic)
+- ANALYTICS_ID: GT-PZSPFKNH
+- ADS: Google Ads AW-17056167033; conversions copied from the old site's GTM-TSMJTHXB (phone click, e-mail click, Zapisy form, Kontakt form, Kontakt page visit), only with marketing consent. GTM itself is not used on the new site.
+- COOKIE_CONSENT: own banner (Akceptuję wszystkie / Odrzucam / Wybieram), choice in localStorage 'cookie-consent'; footer button 'Ustawienia cookies' reopens it
 - AI_CRAWLERS: allow-all
 
 ## Search engine verification (optional; the publish skill asks for these after launch)

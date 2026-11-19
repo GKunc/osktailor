@@ -497,3 +497,19 @@ article figure img { display:block; border-radius:var(--radius); }
   .hub-list li { grid-template-columns:6.5rem minmax(0, 1fr); gap:1rem; }
   .hub-cta-actions { flex-direction:row; flex-wrap:wrap; }
 }
+
+/* Cookie consent banner (built by js/main.js; without JS nothing is tracked, so there is no banner) */
+.consent { position:fixed; z-index:100; left:1rem; right:1rem; bottom:1rem; max-width:34rem; max-height:calc(100vh - 2rem); overflow:auto; background:var(--card); color:var(--text); border:1px solid var(--line); border-radius:var(--radius); box-shadow:0 10px 32px rgba(0,0,0,.28); padding:1.1rem 1.25rem 1.25rem; font-size:.95rem; line-height:1.5; }
+.consent[hidden], .consent [hidden] { display:none !important; }
+.consent p { margin:0 0 .75rem; }
+.consent .consent-title { font-weight:700; font-size:1.05rem; margin-bottom:.35rem; }
+.consent a { color:var(--link); }
+.consent-choices { border:0; padding:0; margin:0 0 1rem; display:grid; gap:.5rem; }
+.consent-choices label { display:flex; gap:.6rem; align-items:flex-start; cursor:pointer; }
+.consent-choices input { width:1.15rem; height:1.15rem; margin:.15rem 0 0; flex:none; accent-color:var(--accent); }
+.consent-choices label:has(input:disabled) { color:var(--muted); cursor:default; }
+.consent-actions { display:flex; flex-wrap:wrap; gap:.5rem; }
+.consent-actions .btn { flex:1 1 auto; }
+.consent button:focus-visible, .link-button:focus-visible { outline:3px solid var(--yellow); outline-offset:2px; }
+.link-button { background:none; border:0; padding:0; font:inherit; color:#fff; text-decoration:underline; cursor:pointer; }
+@media print { .consent { display:none !important; } }
