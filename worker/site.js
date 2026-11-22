@@ -11,7 +11,7 @@ export const SITE = {
   notifyTo: 'biuro@osktailor.pl',
   replyTo: 'biuro@osktailor.pl',
   phone: '725 563 155',
-  siteUrl: 'https://gkunc.github.io/osktailor/', // switch to https://osktailor.pl/ with the domain
+  siteUrl: 'https://osktailor.pl/',
   color: '#1b73e8',
 };
 

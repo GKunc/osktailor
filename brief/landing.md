@@ -26,8 +26,8 @@ Source: content migrated from the existing WordPress site https://osktailor.pl (
 ## Hosting
 - REPO_NAME: osktailor
 - REPO_OWNER: GKunc
-- CUSTOM_DOMAIN: osktailor.pl (currently served by WordPress; switch DNS only when the owner says so)
-- SITE_URL: https://gkunc.github.io/osktailor (switch to https://osktailor.pl when the domain moves)
+- CUSTOM_DOMAIN: osktailor.pl (DNS at OVH points to GitHub Pages since 2026-11-22)
+- SITE_URL: https://osktailor.pl
 - INDEXNOW_KEY: de6826ab9833b35552edaeceef822f0c
 
 ## Page copy
@@ -77,7 +77,7 @@ Source: content migrated from the existing WordPress site https://osktailor.pl (
 
 ## Author (for blog posts and E-E-A-T)
 - AUTHOR_NAME: Izabela Kunc
-- AUTHOR_URL: https://gkunc.github.io/osktailor/author/iza-kunc/ (author page in this repo: src/author/iza-kunc/; switch with SITE_URL)
+- AUTHOR_URL: https://osktailor.pl/author/iza-kunc/ (author page in this repo: src/author/iza-kunc/)
 - AUTHOR_JOB_TITLE: Instruktorka nauki jazdy
 - AUTHOR_BIO: Instruktorka nauki jazdy w OSK Tailor Gdańsk.
 
