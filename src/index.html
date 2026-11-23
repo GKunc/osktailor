@@ -30,7 +30,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="OSK Tailor blog" href="blog/feed.xml">
-  <link rel="preload" href="img/hero.webp" as="image" fetchpriority="high">
+  <link rel="preload" as="image" href="img/hero-800w.webp" imagesrcset="img/hero-400w.webp 400w, img/hero-800w.webp 800w, img/hero-1024w.webp 1024w" imagesizes="(max-width: 760px) 100vw, 47vw" fetchpriority="high">
   <link rel="preload" href="fonts/russo-one-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/russo-one-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/roboto-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -68,12 +68,24 @@
         "openingHoursSpecification": [
           { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "18:00" }
         ],
-        "makesOffer": {
-          "@type": "Offer",
-          "name": "Kurs prawa jazdy kat. B (standard)",
-          "price": "4200",
-          "priceCurrency": "PLN"
-        },
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "name": "Kurs prawa jazdy kat. B (standard)",
+            "price": "4200",
+            "priceCurrency": "PLN",
+            "url": "https://osktailor.pl/cennik/"
+          },
+          {
+            "@type": "Offer",
+            "name": "Kurs prawa jazdy kat. B (standard): promocja, ostatnie 10 miejsc",
+            "price": "3800",
+            "priceCurrency": "PLN",
+            "priceValidUntil": "2026-11-30",
+            "availability": "https://schema.org/LimitedAvailability",
+            "url": "https://osktailor.pl/cennik/#promocja"
+          }
+        ],
         "award": "Złota Firma",
         "sameAs": [
           "https://www.facebook.com/people/OSK-Tailor/61574449417575/",
@@ -270,7 +282,7 @@
           <ul class="checklist">
             <li>Zajęcia teoretyczne online 24/7 przez 120 dni, z konsultacjami online lub osobiście.</li>
             <li>Obowiązkowe szkolenie z pierwszej pomocy z ratownikiem medycznym.</li>
-            <li>30 godzin jazd z instruktorem, na manualu (Kia Rio 4) lub automacie (Skoda Kamiq).</li>
+            <li>30 godzin jazd z instruktorem, na manualu (Kia Rio 4) lub <a href="kurs-na-automat-osk-tailor/">automacie (Skoda Kamiq)</a>.</li>
             <li>Praktyczny egzamin wewnętrzny.</li>
             <li>Elastyczne umawianie jazd na terenie Gdańska.</li>
             <li>Możliwość zmiany instruktora na wniosek kursanta.</li>
@@ -363,7 +375,7 @@
           <img src="img/trojmiasto-profil-800w.webp" srcset="img/trojmiasto-profil-400w.webp 400w, img/trojmiasto-profil-800w.webp 800w, img/trojmiasto-profil-1150w.webp 1150w" sizes="(max-width: 600px) 100vw, 400px" alt="Profil OSK Tailor w serwisie Trojmiasto.pl" width="1150" height="760" loading="lazy">
           <div>
             <time datetime="2026-07-26">26 lipca 2026</time>
-            <h3><a href="opinie-trojmiasto-osk-tailor/">Jesteśmy na Trojmiasto.pl! Odwiedź nasz profil i podziel się opinią</a></h3>
+            <h3><a href="opinie-trojmiasto-osk-tailor/">OSK Tailor opinie: Trojmiasto.pl i wizytówka Google</a></h3>
             <p>Nasza wizytówka w lokalnym katalogu firm i prośba o Twoją opinię.</p>
           </div>
         </li>

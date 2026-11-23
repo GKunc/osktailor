@@ -34,13 +34,14 @@
   "name": "Kurs prawa jazdy kat. B w Gdańsku",
   "serviceType": "Kurs prawa jazdy kategorii B",
   "url": "https://osktailor.pl/cennik/",
-  "provider": { "@id": "https://osktailor.pl/#organization" },
+  "provider": { "@type": "Organization", "@id": "https://osktailor.pl/#organization", "name": "OSK Tailor", "url": "https://osktailor.pl/", "logo": { "@type": "ImageObject", "url": "https://osktailor.pl/icon-512.png", "width": 512, "height": 512 } },
   "areaServed": { "@type": "City", "name": "Gdańsk" },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Cennik OSK Tailor Gdańsk",
     "itemListElement": [
       { "@type": "Offer", "name": "Kurs standardowy, manual (Kia Rio 4)", "price": "4200", "priceCurrency": "PLN" },
+      { "@type": "Offer", "name": "Kurs standardowy, manual (Kia Rio 4): promocja, ostatnie 10 miejsc", "price": "3800", "priceCurrency": "PLN", "priceValidUntil": "2026-11-30", "availability": "https://schema.org/LimitedAvailability", "url": "https://osktailor.pl/cennik/#promocja" },
       { "@type": "Offer", "name": "Kurs ekspresowy, manual (Kia Rio 4)", "price": "5000", "priceCurrency": "PLN" },
       { "@type": "Offer", "name": "Kurs standardowy, automat (Skoda Kamiq)", "price": "4600", "priceCurrency": "PLN" },
       { "@type": "Offer", "name": "1 h jazdy dodatkowej, manual, dla kursantów OSK Tailor", "price": "150", "priceCurrency": "PLN" },
@@ -63,7 +64,7 @@
       "name": "Jaka jest cena kursu prawa jazdy kat. B w Gdańsku?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cena zależy od wybranego wariantu (standardowy, ekspresowy lub indywidualny) i skrzyni biegów. Aktualne ceny znajdziesz w tabeli powyżej. Do ceny kursu doliczasz opłaty niezależne od szkoły: badanie lekarskie, zdjęcie, egzaminy w PORD i wydanie prawa jazdy."
+        "text": "Kurs standardowy w OSK Tailor kosztuje 4200 zł. Do tego dochodzą opłaty niezależne od szkoły: badanie lekarskie ok. 200 zł, zdjęcie ok. 50 zł, egzamin teoretyczny w PORD 59 zł, praktyczny 239 zł i wydanie prawa jazdy 100 zł. Ceny pozostałych wariantów (ekspresowy, automat) znajdziesz w tabeli powyżej."
       }
     },
     {
@@ -171,7 +172,7 @@
             <tr><td>1h jazdy dodatkowej dla kursantów spoza OSK Tailor</td><td class="num">160 zł</td></tr>
             <tr><td>Pakiet 4h dla kursantów OSK Tailor</td><td class="num">550 zł</td></tr>
             <tr><td>Pakiet 4h dla kursantów spoza OSK Tailor</td><td class="num">600 zł</td></tr>
-            <tr class="group-start"><th scope="rowgroup" rowspan="4">AUTOMAT (new Skoda Kamiq)</th><td>Standardowy</td><td class="num">4600 zł</td></tr>
+            <tr class="group-start"><th scope="rowgroup" rowspan="4"><a href="../kurs-na-automat-osk-tailor/">AUTOMAT</a> (Skoda Kamiq)</th><td>Standardowy</td><td class="num">4600 zł</td></tr>
             <tr><td>Indywidualny (super ekspresowy)</td><td class="num">do uzgodnienia</td></tr>
             <tr><td>1h jazdy dodatkowej</td><td class="num">180 zł</td></tr>
             <tr><td>Pakiet 4h jazd dodatkowych</td><td class="num">700 zł</td></tr>
@@ -233,7 +234,7 @@
       <div class="faq-list">
         <details>
           <summary>Jaka jest cena kursu prawa jazdy kat. B w Gdańsku?</summary>
-          <p>Cena zależy od wybranego wariantu (standardowy, ekspresowy lub indywidualny) i skrzyni biegów. Aktualne ceny znajdziesz w tabeli powyżej. Do ceny kursu doliczasz opłaty niezależne od szkoły: badanie lekarskie, zdjęcie, egzaminy w PORD i wydanie prawa jazdy.</p>
+          <p>Kurs standardowy w OSK Tailor kosztuje 4200 zł. Do tego dochodzą opłaty niezależne od szkoły: badanie lekarskie ok. 200 zł, zdjęcie ok. 50 zł, egzamin teoretyczny w PORD 59 zł, praktyczny 239 zł i wydanie prawa jazdy 100 zł. Ceny pozostałych wariantów (ekspresowy, automat) znajdziesz w tabeli powyżej.</p>
         </details>
         <details>
           <summary>Czy można zapisać się na kurs i zapłacić w ratach?</summary>

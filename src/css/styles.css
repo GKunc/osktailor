@@ -535,6 +535,14 @@ article figure img { display:block; border-radius:var(--radius); }
 .consent-actions .btn { flex:1 1 auto; }
 .consent button:focus-visible, .link-button:focus-visible { outline:3px solid var(--yellow); outline-offset:2px; }
 .link-button { background:none; border:0; padding:0; font:inherit; color:#fff; text-decoration:underline; cursor:pointer; }
+/* Phones: a compact strip on the bottom edge, so the banner leaves the heading and the page visible */
+@media (max-width:40em) {
+  .consent { left:0; right:0; bottom:0; max-width:none; max-height:70vh; border-radius:var(--radius) var(--radius) 0 0; border-width:1px 0 0; padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom, 0px)); font-size:.82rem; line-height:1.4; }
+  .consent .consent-title { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .consent p { margin-bottom:.55rem; }
+  .consent-actions { gap:.4rem; }
+  .consent-actions .btn { flex:1 1 0; min-height:44px; padding:.4rem .5rem; font-size:.85rem; }
+}
 @media print { .consent { display:none !important; } }
 
 /* Price list: limited promotion (cennik/#promocja). A yellow road-marking ticket with hazard stripes;

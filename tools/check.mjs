@@ -54,7 +54,10 @@ const indexable = [];
 
 for (const { p, r } of html) {
   const text = read(p).replace(/<!--[\s\S]*?-->/g, '');
-  const noindex = /noindex/i.test(metaContent(text, 'robots') || '');
+  // Redirect stubs for old WordPress URLs (instant meta refresh) count as redirects, not pages,
+  // even when they carry no noindex (stubs that map 1:1 to a page keep it off so Google passes rankings).
+  const redirect = /<meta[^>]*http-equiv="refresh"[^>]*content="0;/i.test(text);
+  const noindex = redirect || /noindex/i.test(metaContent(text, 'robots') || '');
   if (!noindex) indexable.push(r);
 
   if (!/<html[^>]*\slang="[a-z]{2}(-[A-Za-z]{2})?"/.test(text)) err(r, '<html> needs a valid lang');
