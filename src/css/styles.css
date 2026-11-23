@@ -64,6 +64,7 @@ h3 { font-size: 1.15rem; font-weight:700; line-height:1.3; margin:0 0 .4rem; }
 /* The Polish learner plate: blue square, white L */
 .promo-l { display:inline-grid; place-items:center; width:1.7rem; height:1.7rem; background:#1b73e8; color:#fff; font:400 1.15rem/1 var(--head); border-radius:4px; box-shadow:inset 0 0 0 2px #fff, 0 0 0 1px #1a1f26; transform:rotate(-6deg); }
 .promo-text { font-weight:700; font-size:.95rem; }
+.promo-tag { display:inline-block; background:#d32f2f; color:#fff; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; padding:.15rem .45rem; border-radius:4px; margin-right:.25rem; vertical-align:.1em; }
 .promo-bar .promo-cta { display:inline-flex; align-items:center; gap:.35rem; background:#1a1f26; color:var(--yellow); font-weight:700; font-size:.92rem; text-decoration:none; padding:.4rem .9rem; border-radius:999px; white-space:nowrap; }
 .promo-cta span[aria-hidden] { transition:transform .2s ease; }
 .promo-cta:hover span[aria-hidden], .promo-cta:focus-visible span[aria-hidden] { transform:translateX(3px); }
@@ -535,12 +536,41 @@ article figure img { display:block; border-radius:var(--radius); }
 .link-button { background:none; border:0; padding:0; font:inherit; color:#fff; text-decoration:underline; cursor:pointer; }
 @media print { .consent { display:none !important; } }
 
-/* Price list: limited promotion card (cennik/#promocja) */
-.promo-box { max-width:40rem; margin:0 auto; text-align:center; background:var(--card); border:1px solid var(--line); border-top:6px solid var(--yellow); border-radius:var(--radius); padding:clamp(1.5rem, 4vw, 2.5rem); }
-.promo-kicker { text-transform:uppercase; letter-spacing:.12em; font-size:.85rem; color:var(--muted); margin:0 0 .75rem; }
-.promo-box h2 { font-family:var(--head); font-weight:400; margin:0 0 .75rem; scroll-margin-top:7rem; }
-.promo-box > p { margin-left:auto; margin-right:auto; }
-.promo-was { display:block; color:var(--muted); font-size:1.1rem; }
-.promo-now { display:block; font-size:clamp(2.2rem, 7vw, 2.8rem); font-weight:800; line-height:1.1; }
-.promo-save { color:var(--save); font-weight:700; font-size:clamp(1.15rem, 3.5vw, 1.4rem); line-height:1.35; }
-.promo-box .note { margin-top:1.25rem; }
+/* Price list: limited promotion (cennik/#promocja). A yellow road-marking ticket with hazard stripes;
+   fixed dark-on-yellow colours, so it reads the same in light and dark mode. */
+.promo-section { padding-top:clamp(1rem, 3vw, 2rem); }
+.promo-ticket { --ink:#1a1f26; --stripe:repeating-linear-gradient(-45deg, var(--ink) 0 14px, var(--yellow) 14px 28px);
+  position:relative; display:grid; grid-template-columns:minmax(0, 1.25fr) minmax(0, 1fr); gap:2rem 3rem; align-items:center;
+  background:var(--yellow); color:var(--ink); border-radius:calc(var(--radius) * 2); padding:calc(clamp(1.75rem, 4vw, 3rem) + 12px) clamp(1.5rem, 4vw, 3rem);
+  overflow:hidden; box-shadow:0 18px 40px -18px rgba(0,0,0,.45); }
+.promo-ticket::before, .promo-ticket::after { content:""; position:absolute; left:0; right:0; height:12px; background:var(--stripe); }
+.promo-ticket::before { top:0; } .promo-ticket::after { bottom:0; }
+.promo-flag { display:inline-block; margin:0 0 1rem; background:var(--ink); color:var(--yellow); font-weight:700; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; padding:.35rem .8rem; border-radius:999px; }
+.promo-ticket h2 { font-family:var(--head); font-weight:400; font-size:clamp(2rem, 1.3rem + 3vw, 3.2rem); margin:0 0 .75rem; max-width:none; scroll-margin-top:7rem; }
+.promo-info > p:not(.promo-flag) { margin:0 0 1rem; max-width:34rem; font-size:1.05rem; }
+.promo-terms { list-style:none; margin:0; padding:0; display:grid; gap:.4rem; font-weight:500; }
+.promo-terms li { position:relative; padding-left:1.6rem; }
+.promo-terms li::before { content:""; position:absolute; left:0; top:.55em; width:1rem; height:.35rem; background:var(--ink); border-radius:2px; }
+.promo-deal { position:relative; background:#fff; color:var(--ink); border-radius:var(--radius); padding:clamp(1.5rem, 3vw, 2rem); text-align:center; box-shadow:0 0 0 3px var(--ink); }
+.promo-sign { position:absolute; top:-1.6rem; right:-1rem; display:grid; place-content:center; width:5.6rem; height:5.6rem; border-radius:50%; background:#fff; border:.5rem solid #d32f2f; font:400 .75rem/1.1 var(--head); text-align:center; transform:rotate(8deg); box-shadow:0 6px 14px -6px rgba(0,0,0,.5); }
+.promo-sign span { display:block; font-size:1.2rem; letter-spacing:-.02em; }
+.promo-prices { margin:0; }
+.promo-was { display:block; color:#5a616b; font-size:1.2rem; text-decoration-thickness:2px; text-decoration-color:#d32f2f; }
+.promo-now { display:block; font-family:var(--head); font-weight:400; font-size:clamp(3rem, 2rem + 4vw, 4.5rem); line-height:1.05; }
+.promo-save { margin:.4rem 0 1.25rem; font-weight:700; color:#1b5e20; }
+.promo-btn { display:flex; justify-content:center; align-items:center; gap:.5rem; min-height:3rem; padding:.75rem 1.25rem; border-radius:var(--radius); background:var(--ink); color:var(--yellow); font-weight:700; font-size:1.05rem; text-decoration:none; }
+.promo-btn span { transition:transform .2s ease; }
+.promo-btn:hover span, .promo-btn:focus-visible span { transform:translateX(4px); }
+.promo-btn:focus-visible { outline:3px solid #1b73e8; outline-offset:3px; }
+@media (max-width: 760px) {
+  .promo-ticket { grid-template-columns:1fr; }
+  .promo-sign { top:-1.4rem; right:-.4rem; width:5rem; height:5rem; }
+  .promo-sign span { font-size:1.05rem; }
+}
+
+/* Home pricing: link to the promotion right under the base price */
+.promo-callout { display:inline-flex; align-items:center; gap:.4rem .75rem; flex-wrap:wrap; margin:0 0 1.5rem; padding:.6rem .9rem; background:var(--yellow); color:#1a1f26; border-radius:var(--radius); text-decoration:none; font-size:1rem; line-height:1.35; box-shadow:0 0 0 2px #1a1f26 inset; }
+.promo-callout-tag { background:#1a1f26; color:var(--yellow); font-weight:700; font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; padding:.2rem .55rem; border-radius:999px; }
+.promo-callout-more { font-weight:700; text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
+.promo-callout:hover .promo-callout-more, .promo-callout:focus-visible .promo-callout-more { text-decoration-thickness:2px; }
+.promo-callout:focus-visible { outline:3px solid #1b73e8; outline-offset:3px; }
