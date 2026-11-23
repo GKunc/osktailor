@@ -31,10 +31,10 @@ Source: content migrated from the existing WordPress site https://osktailor.pl (
 - INDEXNOW_KEY: de6826ab9833b35552edaeceef822f0c
 
 ## Page copy
-- PAGE_TITLE: Nauka jazdy Gdańsk kat. B, TOP 10 zdawalności PORD
+- PAGE_TITLE: Nauka jazdy Gdańsk – kurs prawa jazdy kat. B
 - H1_HEADLINE: Chcesz szybko zdobyć prawo jazdy kat. B w Gdańsku?
 - SUBHEADLINE: OSK Tailor to rodzinna szkoła jazdy w samym sercu Gdańska. Uczymy nowocześnie, bez nerwów i presji, na manualu (Kia Rio 4) lub automacie (Skoda Kamiq), z tempem i grafikiem dopasowanym do Ciebie.
-- META_DESCRIPTION: Kurs prawa jazdy kat. B w Gdańsku: biuro 5 min od Dworca Głównego, auta jak w PORD, teoria online 24/7 i zdawalność 43,6% (TOP 10 w PORD Gdańsk).
+- META_DESCRIPTION: Kurs prawa jazdy kat. B w Gdańsku: biuro 5 min od Dworca Głównego, auta jak w PORD, teoria online 24/7. TOP 10 zdawalności w PORD Gdańsk w II półroczu 2025.
 - CTA_LABEL: Zapisz się na kurs
 - LLMS_SUMMARY: OSK Tailor is a family-run driving school in Gdańsk, Poland, teaching category B (car) courses on manual (Kia Rio 4) and automatic (Skoda Kamiq) cars. Its office is in the Zieleniak building (ul. Wały Piastowskie 1, lok. 508D), 5 minutes from Gdańsk Główny station. Theory is taught online with 24/7 access for 120 days; the standard course costs 4200 PLN and can be paid in two 0% instalments.
 - BLOG_TITLE: Praktyczny poradnik kierowcy
@@ -45,9 +45,9 @@ Source: content migrated from the existing WordPress site https://osktailor.pl (
 - Course includes: online theory 24/7 for 120 days with consultations online or in person; mandatory first-aid training with a paramedic; 30 h of driving with an instructor; internal practical exam; flexible scheduling in Gdańsk; possible change of instructor; cars identical to PORD Gdańsk (Kia Rio 4).
 - Target audience: people in Gdańsk getting a category B licence, and parents/grandparents choosing a course for a child or grandchild.
 - Main problem solved: passing the PORD exam quickly and without stress, becoming a safe driver.
-- Unique selling points: TOP 10 pass rate in PORD Gdańsk; cars identical to the exam cars; office in the city centre (Zieleniak, 5 min from the main station), so lessons start on exam routes; family atmosphere, patient instructors; transparent prices, no hidden fees; Złota Firma award.
-- Price / offer: standard course 4200 PLN (homepage, November 2026); 2 instalments 0%. External costs: medical exam ~200 zł, photo ~50 zł, PORD theory exam 59 zł, PORD practical exam 239 zł, licence issue 100 zł.
-- Promotion (from the owner, 22.11.2026): "Ostatnie promocyjne 10 miejsc" — standard course 3800 zł instead of 4200 zł (save 400 zł), valid until the end of the month or until the places run out; then back to 4200 zł. Promotions do not combine. Shown on cennik/#promocja; the yellow bar on every page links there.
+- Unique selling points: TOP 10 pass rate in PORD Gdańsk in H2 2025 (always state the period: the yearly 43.6% and H1 2026 41.2% are below the Gdańsk-schools average); cars identical to the exam cars; office in the city centre (Zieleniak, 5 min from the main station), so lessons start on exam routes; family atmosphere, patient instructors; transparent prices, no hidden fees; Złota Firma award.
+- Price / offer: standard course 4200 PLN (homepage, November 2026); 2 instalments 0%. All prices on the site are typed by hand in src/ (cennik table, homepage, structured data, llms.txt); since 23.11.2026 the pricing page no longer loads prices from the office n8n sheet, so a price change means editing the site. External costs: medical exam ~200 zł, photo ~50 zł, PORD theory exam 59 zł, PORD practical exam 239 zł, licence issue 100 zł.
+- Promotion (from the owner, 22.11.2026): "Ostatnie promocyjne 10 miejsc" — standard course 3800 zł instead of 4200 zł (save 400 zł), valid until the end of the month (30.11.2026) or until the places run out; then back to 4200 zł. Condition (from the owner, 23.11.2026): the student passes the PORD theory exam within 1 month of signing the contract. Promotions do not combine; the old "BLACK WEEKS" row in the office price sheet is this same −400 zł and is not shown separately. Shown on cennik/#promocja; the yellow bar on every page links there.
 - Districts served: Śródmieście, Orunia, Chełm, Wrzeszcz, Morena, Zaspa, Przymorze, Oliwa and others on request.
 - Location / service area: Gdańsk. Office: ul. Wały Piastowskie 1, lok. 508D, 80-855 Gdańsk (Zieleniak). Office hours Mon–Fri 10:00–18:00, Sat–Sun closed. Visits by prior SMS/Messenger/phone.
 - Online theory platform: https://imageprawojazdy.pl/
