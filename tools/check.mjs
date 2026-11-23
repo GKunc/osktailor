@@ -4,6 +4,7 @@
 import { existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { SRC, walk, rel, read, sitemapUrls, siteUrl, urlToFile, fileToUrl } from './lib.mjs';
+import { checkPrices } from './ceny.mjs';
 
 const dir = resolve(process.argv[2] || SRC);
 const errors = [];
@@ -131,6 +132,13 @@ if (existsSync(join(dir, 'sitemap.xml'))) {
     if (!feed.includes(`<link>${url}</link>`)) err(r, 'missing from blog/feed.xml');
     if (!llms.includes(url)) err(r, 'missing from llms.txt');
   }
+}
+
+// Prices: every amount on the site must match brief/ceny.json (see tools/ceny.mjs, skill zmiana-ceny)
+{
+  const p = checkPrices(dir);
+  errors.push(...p.errors);
+  warnings.push(...p.warnings);
 }
 
 for (const w of warnings) console.log(`warn  ${w}`);

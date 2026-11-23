@@ -6,6 +6,7 @@ One repo per landing page. Start with the `new-landing` skill; hosting is handle
 ## Rules
 - All page source lives in `src/`. Keep it dependency-free. Repo tooling lives in `tools/` (Node, no npm deps).
 - Placeholders look like `{{NAME}}`; the values live in `brief/landing.md`. No `{{` may remain at release (except `src/blog/_template.html`).
+- Prices are typed by hand; the one source is `brief/ceny.json`. Any price or promotion change goes through the `zmiana-ceny` skill; `node tools/ceny.mjs` (also run by check/verify/CI) fails when any page disagrees.
 - Read `brief/landing.md` (via the `domain-knowledge` skill) before writing any copy. Never invent facts, numbers, testimonials or legal details. Remove a section rather than ship filler.
 - Mobile-first, semantic HTML, one `<h1>`, accessible forms, no layout shift, works without JS.
 - Relative links inside the site (it may live under `/<repo>/`), except `404.html`, which uses absolute `SITE_URL` links.
@@ -18,4 +19,4 @@ One repo per landing page. Start with the `new-landing` skill; hosting is handle
 3. After pushing: `gh run watch` succeeds (CI also runs html-validate, lychee and Lighthouse) and the live URL returns 200.
 
 ## Skills (`.claude/skills/`)
-dev-setup, new-landing, publish, domain-knowledge, seo, blog-post, audit, webmcp
+dev-setup, new-landing, publish, domain-knowledge, seo, blog-post, audit, webmcp, zmiana-ceny

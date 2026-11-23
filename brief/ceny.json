@@ -1,0 +1,44 @@
+{
+  "_opis": "Jedyne źródło cen OSK Tailor. Zmieniasz cenę tutaj, potem na stronach (skill zmiana-ceny). node tools/ceny.mjs sprawdza, czy strona się zgadza; uruchamia go też node tools/check.mjs, verify i CI.",
+  "obowiazuje_od": "2026-10-01",
+  "kurs": {
+    "manual_standard": { "nazwa": "Kurs standardowy kat. B, manual (Kia Rio 4)", "cena": 4200 },
+    "manual_ekspres": { "nazwa": "Kurs ekspresowy kat. B, manual", "cena": 5000 },
+    "automat_standard": { "nazwa": "Kurs standardowy kat. B, automat (Skoda Kamiq)", "cena": 4600 }
+  },
+  "jazdy_dodatkowe": {
+    "manual_1h_kursant": { "nazwa": "1 h jazdy dodatkowej, manual, kursant OSK Tailor", "cena": 150 },
+    "manual_1h_spoza": { "nazwa": "1 h jazdy dodatkowej, manual, kursant spoza OSK Tailor", "cena": 160 },
+    "manual_4h_kursant": { "nazwa": "Pakiet 4 h, manual, kursant OSK Tailor", "cena": 550 },
+    "manual_4h_spoza": { "nazwa": "Pakiet 4 h, manual, kursant spoza OSK Tailor", "cena": 600 },
+    "automat_1h": { "nazwa": "1 h jazdy dodatkowej, automat", "cena": 180 },
+    "automat_4h": { "nazwa": "Pakiet 4 h jazd dodatkowych, automat", "cena": 700 }
+  },
+  "pozostale": {
+    "automat_egzamin_pierwszy": { "nazwa": "Podstawienie auta automat na pierwszy egzamin", "cena": 250 },
+    "automat_egzamin_kolejny": { "nazwa": "Podstawienie auta automat na kolejny egzamin", "cena": 300 }
+  },
+  "oplaty_zewnetrzne": {
+    "badanie_lekarskie": { "nazwa": "Badanie lekarskie (ok.)", "cena": 200 },
+    "zdjecie": { "nazwa": "Zdjęcie (ok.)", "cena": 50 },
+    "egzamin_teoretyczny": { "nazwa": "Egzamin teoretyczny w PORD", "cena": 59 },
+    "egzamin_praktyczny": { "nazwa": "Egzamin praktyczny w PORD", "cena": 239 },
+    "wydanie_prawa_jazdy": { "nazwa": "Wydanie prawa jazdy", "cena": 100 }
+  },
+  "promocja": {
+    "aktywna": true,
+    "nazwa": "Ostatnie promocyjne 10 miejsc",
+    "dotyczy": "manual_standard",
+    "rabat": 400,
+    "do": "2026-11-30",
+    "warunek": "egzamin teoretyczny w PORD zdany w ciągu 1 miesiąca od podpisania umowy"
+  },
+  "pomijaj": {
+    "_opis": "Strony z kwotami, które nie są cenami szkoły (raporty cen z danego kwartału, mandaty). Ich kwot nie sprawdzamy i nie zmieniamy przy zmianie cennika.",
+    "ile-kosztuje-prawo-jazdy-w-gdansku-w-ii-kwartale-2026-analiza-cen-13-szkol-jazdy/index.html": "raport cen rynku z czerwca 2026",
+    "ile-kosztuje-prawo-jazdy-w-gdansku-w-iii-kwartale-2026-analiza-cen/index.html": "raport cen rynku z września 2026",
+    "prawo-jazdy-kat-b-od-17-lat-poradnik-osk-tailor/index.html": "kary i mandaty",
+    "wlacz-myslenie-nim-opadna-szlabany/index.html": "kary i mandaty",
+    "blog/_template.html": "szablon"
+  }
+}
