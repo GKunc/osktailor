@@ -21,7 +21,7 @@ Run `node tools/check.mjs` first: it already enforces placeholders, filler copy,
 - **Clear entity.** Say explicitly what BRAND is, for whom and where, the same way on every page, in `llms.txt` and in the Organization schema; `sameAs` links to real profiles.
 - **Quotable facts.** Specific numbers, prices, steps and definitions (only from the brief) in short paragraphs, lists and tables; cite sources for any statistic.
 - **Question-shaped headings** matching how people ask assistants; a real FAQ where useful.
-- **Freshness.** Visible "Updated" date + `dateModified` on posts, sitemap `<lastmod>` (automatic at deploy).
+- **Freshness.** Visible "Updated" date + `dateModified` on posts, sitemap `<lastmod>` (at deploy, taken from the page's `dateModified`).
 - **Experience and authorship.** Named author with a real bio/link on posts (E-E-A-T); first-hand examples beat generic advice.
 - **Crawl access.** robots.txt allows OAI-SearchBot, ChatGPT-User, PerplexityBot, Claude-SearchBot and Bingbot; content is in the HTML, not injected by JS.
 - **Bing matters for ChatGPT.** IndexNow runs on every deploy; make sure the site is verified in Bing Webmaster Tools (`publish` skill).

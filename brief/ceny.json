@@ -35,8 +35,8 @@
   },
   "pomijaj": {
     "_opis": "Strony z kwotami, które nie są cenami szkoły (raporty cen z danego kwartału, mandaty). Ich kwot nie sprawdzamy i nie zmieniamy przy zmianie cennika.",
-    "ile-kosztuje-prawo-jazdy-w-gdansku-w-ii-kwartale-2026-analiza-cen-13-szkol-jazdy/index.html": "raport cen rynku z czerwca 2026",
-    "ile-kosztuje-prawo-jazdy-w-gdansku-w-iii-kwartale-2026-analiza-cen/index.html": "raport cen rynku z września 2026",
+    "ile-kosztuje-prawo-jazdy-w-gdansku-ii-kwartal-2026/index.html": "raport cen rynku z czerwca 2026",
+    "ile-kosztuje-prawo-jazdy-w-gdansku-iii-kwartal-2026/index.html": "raport cen rynku z września 2026",
     "prawo-jazdy-kat-b-od-17-lat-poradnik-osk-tailor/index.html": "kary i mandaty",
     "wlacz-myslenie-nim-opadna-szlabany/index.html": "kary i mandaty",
     "blog/_template.html": "szablon"

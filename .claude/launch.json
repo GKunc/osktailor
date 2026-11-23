@@ -10,6 +10,16 @@
       ],
       "cwd": "/Users/grzegorz/Desktop/Claude/osktailor",
       "port": 4321
+    },
+    {
+      "name": "site-4322",
+      "runtimeExecutable": "/Users/grzegorz/.nvm/versions/node/v22.20.0/bin/node",
+      "runtimeArgs": [
+        "tools/serve.mjs",
+        "4322"
+      ],
+      "cwd": "/Users/grzegorz/Desktop/Claude/osktailor",
+      "port": 4322
     }
   ]
 }

@@ -4,3 +4,5 @@ _site/
 .lighthouseci/
 .claude/settings.local.json
 .wrangler/
+audyt/
+raporty/

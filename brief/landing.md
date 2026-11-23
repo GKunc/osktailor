@@ -53,7 +53,7 @@ Source: content migrated from the existing WordPress site https://osktailor.pl (
 - Online theory platform: https://imageprawojazdy.pl/
 
 ## Proof (real only)
-- Testimonials (public Google reviews, already shown on osktailor.pl; owner to confirm reuse):
+- Testimonials (public Google reviews, already shown on osktailor.pl; reuse confirmed by owner):
   - "Świetni instruktorzy! Otrzymałem odpowiedź na każde pytanie i wiele cennych wskazówek do egzaminu, ale też do bezpiecznej, ekonomicznej jazdy, a wszystko w miłej atmosferze. Polecam, egzamin zdałem za pierwszym razem." (karciarz 04, Google)
   - "Pani Iza świetnie mnie przygotowała do egzaminu, jazdy z nią to był wartościowy czas w dobrej atmosferze, jeszcze raz dziękuję za przygotowanie!" (Eryk, Google)
   - "Bardzo przyjemna atmosfera oraz wysokie kompetencje instruktorów, to połączenie sprawia ze zdanie egzaminu za 1 razem po nauce w tej szkółce nie jest niczym ciężkim" (Szymon Uhlenberg, Google)

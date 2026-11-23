@@ -111,7 +111,7 @@
       banner.setAttribute('aria-describedby', 'consent-text');
       banner.innerHTML = `
         <p class="consent-title" id="consent-title">Pliki cookies</p>
-        <p id="consent-text">Za Twoją zgodą używamy Google Analytics, żeby wiedzieć, jak korzystasz ze strony, i Google Ads, żeby mierzyć skuteczność naszych reklam. Zdanie zmienisz w każdej chwili w stopce strony (Ustawienia cookies). <a href="${new URL('privacy.html#cookies', siteRoot)}">Polityka prywatności</a></p>
+        <p id="consent-text">Za Twoją zgodą używamy Google Analytics, żeby wiedzieć, jak korzystasz ze strony, i Google Ads, żeby mierzyć skuteczność naszych reklam. Zdanie zmienisz w każdej chwili w stopce strony (Ustawienia cookies). <a href="${new URL('polityka-prywatnosci/#cookies', siteRoot)}">Polityka prywatności</a></p>
         <fieldset class="consent-choices" hidden>
           <legend class="visually-hidden">Wybierz, na co się zgadzasz</legend>
           <label><input type="checkbox" checked disabled> Niezbędne: działanie strony, zapamiętanie tego wyboru</label>

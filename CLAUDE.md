@@ -10,7 +10,8 @@ One repo per landing page. Start with the `new-landing` skill; hosting is handle
 - Read `brief/landing.md` (via the `domain-knowledge` skill) before writing any copy. Never invent facts, numbers, testimonials or legal details. Remove a section rather than ship filler.
 - Mobile-first, semantic HTML, one `<h1>`, accessible forms, no layout shift, works without JS.
 - Relative links inside the site (it may live under `/<repo>/`), except `404.html`, which uses absolute `SITE_URL` links.
-- Every new page goes into `sitemap.xml` and `llms.txt`; every post (at `/<slug>/`, matching the old osktailor.pl URLs) also into `blog/index.html` and `blog/feed.xml`.
+- Service pages (`/prawo-jazdy-na-automat-gdansk/`, `/kurs-prawa-jazdy-kat-b-gdansk-centrum/`) are `Service` + `WebPage`, listed in the "Kursy" menu, not in the blog.
+- Every new page goes into `sitemap.xml` and `llms.txt`; every post (at `/<slug>/`, short and without typos; when a slug changes, leave a redirect stub at the old path, like `src/faq/index.html`) also into `blog/index.html` and `blog/feed.xml`.
 - The person using this is not technical: never ask them to open GitHub settings. Do hosting work with `gh`.
 
 ## Before calling anything done

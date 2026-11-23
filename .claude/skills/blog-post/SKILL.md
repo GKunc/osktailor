@@ -17,7 +17,7 @@ description: Create or update a static blog post for this landing (outline, draf
 5. Wire it up (`tools/check.mjs` fails if any is missing):
    - `src/blog/index.html`: `<li>` at the top of `#post-list` with link (`href="../<slug>/"`), `<time>` and a one-sentence summary.
    - `src/blog/feed.xml`: `<item>` at the top (title, link, guid, RFC 822 pubDate, description).
-   - `src/sitemap.xml`: `<url><loc>SITE_URL/<slug>/</loc></url>` (lastmod is added at deploy).
+   - `src/sitemap.xml`: `<url><loc>SITE_URL/<slug>/</loc></url>` (lastmod is added at deploy from the post's `dateModified` - keep it current when you edit a post).
    - `src/llms.txt`: `- [Title](URL): one-line summary` under `## Blog`.
    - Add a link from 1-2 older related posts to the new one.
 6. Updating an existing post: change the content, set DATE_MODIFIED in the JSON-LD, the `article:modified_time` meta and the visible "Updated" date. Only for real changes.

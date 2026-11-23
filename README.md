@@ -25,7 +25,7 @@ Claude creates the page repo from this template, switches on hosting, fills the 
 | `tools/doctor.mjs` | Checks this computer is ready to develop; `--fix` sets up hooks and the preview |
 | `.githooks/` | pre-commit: release checks; pre-push: `verify.mjs --quick` |
 | `tools/check.mjs` | Release checks (placeholders, filler copy, meta, JSON-LD, FAQ schema, sitemap, blog wiring) |
-| `tools/build.mjs` | Builds `_site/` for deploy and adds sitemap `<lastmod>` from git history |
+| `tools/build.mjs` | Builds `_site/` for deploy and adds sitemap `<lastmod>` from each page's dateModified, else git history |
 | `tools/make-assets.mjs` | Generates `og.png` and app icons from the brand (needs local Chrome) |
 | `tools/indexnow.mjs` | Notifies Bing/IndexNow of changed URLs after each deploy |
 | `.github/workflows/pages.yml` | On PRs: checks. On `main`: checks → HTML validation → link check → Lighthouse → deploy → smoke test → IndexNow |

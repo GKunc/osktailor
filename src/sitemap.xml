@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- <lastmod> is added automatically at deploy from each file's last git commit (tools/build.mjs). -->
+<!-- <lastmod> is added at deploy (tools/build.mjs): the page's dateModified/datePublished, else its last git commit. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://osktailor.pl/</loc></url>
   <url><loc>https://osktailor.pl/cennik/</loc></url>
@@ -13,15 +13,15 @@
   <url><loc>https://osktailor.pl/blog-egzamin-w-pord-gdansk-z-osk-tailor-gdansk/</loc></url>
   <url><loc>https://osktailor.pl/aktualnosci-szkola-jazdy-gdansk-osk-tailor/</loc></url>
   <url><loc>https://osktailor.pl/wlacz-myslenie-nim-opadna-szlabany/</loc></url>
-  <url><loc>https://osktailor.pl/ile-kosztuje-prawo-jazdy-w-gdansku-w-iii-kwartale-2026-analiza-cen/</loc></url>
+  <url><loc>https://osktailor.pl/ile-kosztuje-prawo-jazdy-w-gdansku-iii-kwartal-2026/</loc></url>
   <url><loc>https://osktailor.pl/opinie-trojmiasto-osk-tailor/</loc></url>
-  <url><loc>https://osktailor.pl/ile-kosztuje-prawo-jazdy-w-gdansku-w-ii-kwartale-2026-analiza-cen-13-szkol-jazdy/</loc></url>
-  <url><loc>https://osktailor.pl/szkoala-jazdy-gdansk-znaki-najczesciej-mylone-przez-kursantow-czesc-2-droga-jednokierunkowa-a-nakaz-jazdy-prosto/</loc></url>
-  <url><loc>https://osktailor.pl/top10-zdawalnosci-na-egz-praktycznym-na-kat-b-w-ii-polroczu-2025-r-w-pord-gdansk/</loc></url>
+  <url><loc>https://osktailor.pl/ile-kosztuje-prawo-jazdy-w-gdansku-ii-kwartal-2026/</loc></url>
+  <url><loc>https://osktailor.pl/znaki-mylone-droga-jednokierunkowa-a-nakaz-jazdy-prosto/</loc></url>
+  <url><loc>https://osktailor.pl/top10-zdawalnosci-egzamin-praktyczny-kat-b-pord-gdansk/</loc></url>
   <url><loc>https://osktailor.pl/osktailor-pl-nauka-jazdy-gdansk-odleglosci-kodeks/</loc></url>
   <url><loc>https://osktailor.pl/prawko-jazdy-w-ciazy/</loc></url>
-  <url><loc>https://osktailor.pl/znaki-drogowe-egzamin-gdansk-zakaz-vs-postoj-wyjasnia-osk-tailor-gdansk/</loc></url>
-  <url><loc>https://osktailor.pl/standard-ochrony-maloletnikch-osk-tailor-gdansk/</loc></url>
+  <url><loc>https://osktailor.pl/znaki-zakaz-zatrzymywania-vs-zakaz-postoju-egzamin-gdansk/</loc></url>
+  <url><loc>https://osktailor.pl/standard-ochrony-maloletnich-osk-tailor-gdansk/</loc></url>
   <url><loc>https://osktailor.pl/nowe-pytania-o-zagrozenia-egzamin-teoretyczny-w-gdansku-2026/</loc></url>
   <url><loc>https://osktailor.pl/prawo-jazdy-kat-b-od-17-lat-poradnik-osk-tailor/</loc></url>
   <url><loc>https://osktailor.pl/egzamin-praktyczny-prawo-jazdy-pord-gdansk/</loc></url>
@@ -30,11 +30,11 @@
   <url><loc>https://osktailor.pl/pierwsza-pomoc-w-szkole-nauki-jazdy-osk-tailor/</loc></url>
   <url><loc>https://osktailor.pl/prawo-jazdy-kat-b-gdansk-uprawnienia-kierowcy/</loc></url>
   <url><loc>https://osktailor.pl/ostroznosc-vs-szczegolna-ostroznosc/</loc></url>
-  <url><loc>https://osktailor.pl/kurs-blisko-domu-czy-kurs-blisko-osrodka-egazminacyjnego/</loc></url>
-  <url><loc>https://osktailor.pl/kurs-na-automat-osk-tailor/</loc></url>
-  <url><loc>https://osktailor.pl/prawo-jazdy-kat-b-z-osk-tailor-gdansk/</loc></url>
+  <url><loc>https://osktailor.pl/kurs-blisko-domu-czy-blisko-osrodka-egzaminacyjnego/</loc></url>
+  <url><loc>https://osktailor.pl/prawo-jazdy-na-automat-gdansk/</loc></url>
+  <url><loc>https://osktailor.pl/kurs-prawa-jazdy-kat-b-gdansk-centrum/</loc></url>
   <url><loc>https://osktailor.pl/rodzinne-osk-tailor-nauka-jazdy-gdansk/</loc></url>
   <url><loc>https://osktailor.pl/poznaj-nas/</loc></url>
   <url><loc>https://osktailor.pl/nauka-jazdy-gdansk-wrzeszcz/</loc></url>
-  <url><loc>https://osktailor.pl/privacy.html</loc></url>
+  <url><loc>https://osktailor.pl/polityka-prywatnosci/</loc></url>
 </urlset>

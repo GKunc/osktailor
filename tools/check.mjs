@@ -19,7 +19,7 @@ const FILLER = [
   'Replace with a real testimonial', 'Name, Role', 'Question one?', 'Answer one.',
 ];
 const REQUIRED = [
-  'index.html', '404.html', 'privacy.html', 'robots.txt', 'sitemap.xml', 'llms.txt',
+  'index.html', '404.html', 'polityka-prywatnosci/index.html', 'robots.txt', 'sitemap.xml', 'llms.txt',
   'site.webmanifest', 'favicon.svg', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png',
   'og.png', 'indexnow.txt', 'blog/index.html', 'blog/feed.xml',
 ];
@@ -80,7 +80,7 @@ for (const { p, r } of html) {
     if (!href) err(r, 'missing canonical link');
     else if (!/^https:\/\//.test(href)) err(r, `canonical must be an absolute https URL (${href})`);
     else if (urlToFile(href, dir) !== p) err(r, `canonical ${href} does not point to this file`);
-    if (!metaContent(text, 'og:image') && r !== 'privacy.html') warn(r, 'no og:image');
+    if (!metaContent(text, 'og:image') && r !== 'polityka-prywatnosci/index.html') warn(r, 'no og:image');
   }
 
   for (const img of text.match(/<img\b[^>]*>/gi) || []) {
