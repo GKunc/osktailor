@@ -275,6 +275,7 @@ article figure img { display:block; border-radius:var(--radius); }
 .page-head { padding-bottom:clamp(1.5rem, 4vw, 2.5rem); }
 .page-head h1, .contact h1, .signup h1 { font-size:clamp(2.3rem, 1.3rem + 3.6vw, 4.1rem); line-height:1.04; margin:0 0 1rem; max-width:20ch; }
 .page-head .lead { color:var(--muted); margin:0; }
+.page-head .lead + .contact-actions { margin:1.75rem 0 0; }
 .contact .lead, .signup .lead { color:var(--muted); }
 .plain-list { list-style:none; padding:0; margin:0; }
 .plain-list li { margin:.3rem 0; }
@@ -574,3 +575,22 @@ article figure img { display:block; border-radius:var(--radius); }
 .promo-callout-more { font-weight:700; text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
 .promo-callout:hover .promo-callout-more, .promo-callout:focus-visible .promo-callout-more { text-decoration-thickness:2px; }
 .promo-callout:focus-visible { outline:3px solid #1b73e8; outline-offset:3px; }
+
+/* Poznaj nas (team) and district pages */
+.team-member { display:grid; grid-template-columns:minmax(0, 5fr) minmax(0, 7fr); gap:1.5rem 4rem; align-items:start; padding:2.5rem 0; border-top:1px solid var(--line); }
+.team-member:first-of-type { border-top:0; padding-top:0; }
+.team-member p { max-width:40rem; }
+.team-photo { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--radius); }
+.team-role { color:var(--link); font-weight:700; margin:0 0 1rem; }
+.team-motto { font-style:italic; font-size:1.12rem; }
+.values { list-style:none; padding:0; margin:0; display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit, minmax(14rem, 1fr)); }
+.values li { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.5rem; }
+.values p { margin:0; color:var(--muted); }
+.quote-pair { display:grid; gap:2rem 4rem; grid-template-columns:repeat(auto-fit, minmax(16rem, 1fr)); margin:0 0 2rem; }
+.quote-pair cite { display:block; margin-top:.5rem; color:var(--muted); font-style:normal; font-size:.95rem; }
+.steps-list { max-width:46rem; margin:0; padding-left:1.4rem; display:grid; gap:1rem; }
+.steps-list li::marker { font-family:var(--head); color:var(--link); }
+@media (max-width: 760px) {
+  .team-member { grid-template-columns:minmax(0, 1fr); }
+  .team-photo { aspect-ratio:4/3; max-height:28rem; }
+}

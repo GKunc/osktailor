@@ -21,6 +21,7 @@ const MAX_WIDTH = 1200;
 const SIZES = [
   [/class="[^"]*hero-photo/, '(max-width: 760px) 100vw, 47vw'],
   [/class="[^"]*reasons-photo/, '(max-width: 900px) 100vw, 40vw'],
+  [/class="[^"]*team-photo/, '(max-width: 760px) 100vw, 40vw'],
 ];
 const CONTEXT_SIZES = [
   ['hub-featured', '(max-width: 900px) 100vw, 58vw'],
