@@ -26,7 +26,7 @@ const SIZES = [
 const CONTEXT_SIZES = [
   ['hub-featured', '(max-width: 900px) 100vw, 58vw'],
   ['hub-list', '8.5rem'],
-  ['post-card', '(max-width: 600px) 100vw, 400px'],
+  ['post-card', '(max-width: 600px) calc(100vw - 2.5rem), 400px'], // card = screen minus the page gutters
   ['map-embed', '(max-width: 1100px) 100vw, 1100px'],
 ];
 const DEFAULT_SIZES = '(max-width: 46rem) 100vw, 46rem'; // article figures (article max-width)
