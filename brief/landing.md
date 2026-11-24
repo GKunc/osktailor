@@ -78,8 +78,8 @@ Source: content migrated from the existing WordPress site https://osktailor.pl (
 ## Author (for blog posts and E-E-A-T)
 - AUTHOR_NAME: Izabela Kunc
 - AUTHOR_URL: https://osktailor.pl/author/iza-kunc/ (author page in this repo: src/author/iza-kunc/)
-- AUTHOR_JOB_TITLE: Instruktorka nauki jazdy
-- AUTHOR_BIO: Instruktorka nauki jazdy w OSK Tailor Gdańsk.
+- AUTHOR_JOB_TITLE: Kierownik OSK Tailor, instruktorka nauki jazdy (as on /poznaj-nas/)
+- AUTHOR_BIO: Kierownik OSK Tailor i instruktorka nauki jazdy w Gdańsku. Uczy cierpliwie, bez presji i we własnym tempie kursanta (from her own text on /poznaj-nas/).
 
 ## Voice
 - Tone: warm, family, direct "Ty" form; encouraging, a bit playful ("zawsze 100% z klasą – w życiu i na szosie!").
