@@ -603,3 +603,10 @@ article figure img { display:block; border-radius:var(--radius); }
   .team-member { grid-template-columns:minmax(0, 1fr); }
   .team-photo { aspect-ratio:4/3; max-height:28rem; }
 }
+
+/* Post figures: captions, portrait photos kept to a readable size, two photos side by side */
+article figcaption { font-size:.88rem; color:var(--muted); margin-top:.5rem; line-height:1.45; }
+article .figure-portrait img { width:100%; max-width:18rem; height:auto; }
+article .figure-pair { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
+article .figure-pair img { width:100%; height:auto; }
+article .figure-pair figcaption { grid-column:1 / -1; margin-top:0; }

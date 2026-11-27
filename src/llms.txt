@@ -34,6 +34,7 @@ OSK Tailor is a family-run driving school in Gdańsk, Poland, teaching category 
 ## Blog
 
 - [All articles](https://osktailor.pl/blog/): index of every post
+- [Bezpieczna jazda zimą](https://osktailor.pl/bezpieczna-jazda-zima/): winter driving guide for new drivers in Gdańsk: braking with ABS on ice, starting on snow (manual and automatic), skids, following distance, preparing the car, winter tyres (not mandatory in Poland), Gdańsk hills and bridges, taking the PORD exam in winter
 - [Włącz myślenie, nim opadną szlabany](https://osktailor.pl/wlacz-myslenie-nim-opadna-szlabany/): rules at railway level crossings in Poland and the announced 3-month licence suspension
 - [Ile kosztuje prawo jazdy w Gdańsku? Ceny w III kwartale 2026](https://osktailor.pl/ile-kosztuje-prawo-jazdy-w-gdansku-iii-kwartal-2026/): price survey of category B courses in Gdańsk schools, September 2026
 - [Jesteśmy na Trojmiasto.pl!](https://osktailor.pl/opinie-trojmiasto-osk-tailor/): OSK Tailor's profile on Trojmiasto.pl and how to leave a review
